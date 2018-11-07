@@ -193,6 +193,10 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
 
             if (handshakeData.themeData) {
                 applyTheme(handshakeData.themeData);
+
+                window.addEventListener("themeChanged", (ev: any) => {
+                    applyTheme(ev.detail.data);
+                });
             }
 
             resolveReady();
