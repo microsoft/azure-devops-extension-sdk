@@ -53,7 +53,7 @@ export interface IUserContext {
 /**
  * DevOps host level
  */
-export const enum HostType {
+export enum HostType {
 
     /**
      * The Deployment host
