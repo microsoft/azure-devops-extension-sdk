@@ -124,6 +124,26 @@ function newFingerprint() {
 }
 
 /**
+ * Gets all own and inherited property names of the given object, excluding
+ * those that are inherited from Object's prototype and "constructor".
+ * @param obj
+ */
+function getAllPropertyNames(obj: any) {
+    const properties: { [key: string]: true } = {};
+    while (obj && obj !== Object.prototype) {
+        const ownPropertyNames = Object.getOwnPropertyNames(obj);
+        for (const name of ownPropertyNames) {
+            if (name !== "constructor") {
+                properties[name] = true;
+            }
+        }
+        obj = Object.getPrototypeOf(obj);
+    }
+
+    return properties;
+}
+
+/**
  * Catalog of objects exposed for XDM
  */
 export class XDMObjectRegistry implements IXDMObjectRegistry {
@@ -497,21 +517,10 @@ export class XDMChannel implements IXDMChannel {
             returnValue = {};
             parentObjects.newObjects.push(returnValue);
 
-            var keys: any = {};
+            var keys: { [key: string]: true } = {};
 
             try {
-                // We want to get both enumerable and non-enumerable properties
-                // including inherited enumerable properties. for..in grabs
-                // enumerable properties (including inherited properties) and
-                // getOwnPropertyNames includes non-enumerable properties.
-                // Merge these results together.
-                for (var key in obj) {
-                    keys[key] = true;
-                }
-                var ownProperties = Object.getOwnPropertyNames(obj);
-                for (var i = 0, l = ownProperties.length; i < l; i++) {
-                    keys[ownProperties[i]] = true;
-                }
+                keys = getAllPropertyNames(obj);
             }
             catch (ex) {
                 // We may not be able to access the iterator of this object. Skip its serialization.
