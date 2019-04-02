@@ -1,6 +1,6 @@
 {
   "name": "azure-devops-extension-sdk",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Azure DevOps web extension JavaScript library.",
   "repository": {
     "type": "git",

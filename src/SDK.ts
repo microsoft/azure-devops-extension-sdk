@@ -5,6 +5,13 @@ import { channelManager } from "./XDM";
  */
 export const sdkVersion = 3.0;
 
+const global = window as any;
+if (global._AzureDevOpsSDKVersion) {
+    console.error("The AzureDevOps SDK is already loaded. Only one version of this module can be loaded in a given document.");
+}
+
+global._AzureDevOpsSDKVersion = sdkVersion;
+
 /**
  * Options for extension initialization -- passed to DevOps.init()
  */
