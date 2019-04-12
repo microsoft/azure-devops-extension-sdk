@@ -37,6 +37,11 @@ export interface IExtensionInitOptions {
 export interface IUserContext {
 
     /**
+     * Identity descriptor used to represent this user. In the format of {subject-type}.{base64-encoded-subject-id}
+     */
+    descriptor: string;
+
+    /**
      * Unique id for the user
      */
     id: string;
