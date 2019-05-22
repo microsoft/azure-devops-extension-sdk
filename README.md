@@ -12,7 +12,7 @@ The client SDK enables web extensions to communicate to the host frame. It can b
 - Obtain an authorization token to use in REST calls back to Azure DevOps
 - Get remote services offered by the host frame
 
-A full API reference of can be found [here](https://docs.microsoft.com/en-us/javascript-typescript/azure-devops-extension-sdk).
+A full API reference of can be found [here](https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-sdk/).
 
 ## Get started with a new extension
 
