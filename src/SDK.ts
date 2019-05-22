@@ -123,6 +123,11 @@ export interface IExtensionContext {
      * Id of the extension (without the publisher prefix)
      */
     extensionId: string;
+
+    /**
+     * Version of the extension
+     */
+    version: string;
 }
 
 interface IExtensionHandshakeOptions extends IExtensionInitOptions {
