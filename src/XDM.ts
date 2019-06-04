@@ -460,7 +460,6 @@ export class XDMChannel implements IXDMChannel {
 
             var itemType = typeof item;
             if (itemType === "undefined") {
-                newObject[key] = undefined;
                 return;
             }
 
