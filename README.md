@@ -39,7 +39,7 @@ SDK.init();
 ```
 
 ## API
-A full API reference of can be found [here](https://docs.microsoft.com/en-us/javascript-typescript/azure-devops-extension-sdk).
+A full API reference of can be found [here](https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-sdk/).
 
 
 ## Code of Conduct
