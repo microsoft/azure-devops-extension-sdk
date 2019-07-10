@@ -99,6 +99,11 @@ export interface IHostContext {
     name: string;
 
     /**
+     * Version of Azure DevOps used by the current host (organization)
+     */
+    serviceVersion: string;
+
+    /**
      * DevOps host level
      */
     type: HostType;
