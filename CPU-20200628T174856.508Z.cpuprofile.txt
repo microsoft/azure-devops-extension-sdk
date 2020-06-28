@@ -1,0 +1,8063 @@
+{
+	"nodes": [
+		{
+			"id": 1,
+			"callFrame": {
+				"functionName": "(root)",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 0,
+			"children": [
+				2
+			]
+		},
+		{
+			"id": 2,
+			"callFrame": {
+				"functionName": "processTicksAndRejections",
+				"scriptId": "29",
+				"url": "internal/process/task_queues.js",
+				"lineNumber": 64,
+				"columnNumber": 34
+			},
+			"hitCount": 0,
+			"children": [
+				3
+			]
+		},
+		{
+			"id": 3,
+			"callFrame": {
+				"functionName": "runMicrotasks",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 0,
+			"children": [
+				4
+			]
+		},
+		{
+			"id": 4,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "1839",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/ms-azuretools.vscode-azureterraform-0.3.0/node_modules/async-listener/glue.js",
+				"lineNumber": 161,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				5
+			]
+		},
+		{
+			"id": 5,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "1836",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/ms-azuretools.vscode-azureterraform-0.3.0/node_modules/async-listener/index.js",
+				"lineNumber": 539,
+				"columnNumber": 37
+			},
+			"hitCount": 0,
+			"children": [
+				6
+			]
+		},
+		{
+			"id": 6,
+			"callFrame": {
+				"functionName": "propagateAslWrapper",
+				"scriptId": "1836",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/ms-azuretools.vscode-azureterraform-0.3.0/node_modules/async-listener/index.js",
+				"lineNumber": 500,
+				"columnNumber": 30
+			},
+			"hitCount": 0,
+			"children": [
+				7
+			]
+		},
+		{
+			"id": 7,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 845,
+				"columnNumber": 150
+			},
+			"hitCount": 0,
+			"children": [
+				8
+			]
+		},
+		{
+			"id": 8,
+			"callFrame": {
+				"functionName": "_activateByEvent",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 835,
+				"columnNumber": 588
+			},
+			"hitCount": 0,
+			"children": [
+				9
+			]
+		},
+		{
+			"id": 9,
+			"callFrame": {
+				"functionName": "activateByEvent",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 605,
+				"columnNumber": 866
+			},
+			"hitCount": 0,
+			"children": [
+				10
+			]
+		},
+		{
+			"id": 10,
+			"callFrame": {
+				"functionName": "_activateExtensions",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 608,
+				"columnNumber": 78
+			},
+			"hitCount": 0,
+			"children": [
+				11
+			]
+		},
+		{
+			"id": 11,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 608,
+				"columnNumber": 528
+			},
+			"hitCount": 0,
+			"children": [
+				12
+			]
+		},
+		{
+			"id": 12,
+			"callFrame": {
+				"functionName": "_activateExtension",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 608,
+				"columnNumber": 671
+			},
+			"hitCount": 0,
+			"children": [
+				13
+			]
+		},
+		{
+			"id": 13,
+			"callFrame": {
+				"functionName": "actualActivateExtension",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 834,
+				"columnNumber": 677
+			},
+			"hitCount": 0,
+			"children": [
+				14
+			]
+		},
+		{
+			"id": 14,
+			"callFrame": {
+				"functionName": "_activateExtension",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 836,
+				"columnNumber": 847
+			},
+			"hitCount": 0,
+			"children": [
+				15
+			]
+		},
+		{
+			"id": 15,
+			"callFrame": {
+				"functionName": "_doActivateExtension",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 837,
+				"columnNumber": 469
+			},
+			"hitCount": 0,
+			"children": [
+				16
+			]
+		},
+		{
+			"id": 16,
+			"callFrame": {
+				"functionName": "_loadCommonJSModule",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 943,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				17
+			]
+		},
+		{
+			"id": 17,
+			"callFrame": {
+				"functionName": "s",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 32,
+				"columnNumber": 70
+			},
+			"hitCount": 0,
+			"children": [
+				18
+			]
+		},
+		{
+			"id": 18,
+			"callFrame": {
+				"functionName": "require",
+				"scriptId": "77",
+				"url": "internal/modules/cjs/helpers.js",
+				"lineNumber": 66,
+				"columnNumber": 30
+			},
+			"hitCount": 0,
+			"children": [
+				19
+			]
+		},
+		{
+			"id": 19,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				20
+			]
+		},
+		{
+			"id": 20,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				21
+			]
+		},
+		{
+			"id": 21,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				22
+			]
+		},
+		{
+			"id": 22,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				23
+			]
+		},
+		{
+			"id": 23,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				24
+			]
+		},
+		{
+			"id": 24,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				25
+			]
+		},
+		{
+			"id": 25,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				26
+			]
+		},
+		{
+			"id": 26,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				27
+			]
+		},
+		{
+			"id": 27,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				28
+			]
+		},
+		{
+			"id": 28,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				29
+			]
+		},
+		{
+			"id": 29,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4894",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/build/ext-src/extension.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				30
+			]
+		},
+		{
+			"id": 30,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				31
+			]
+		},
+		{
+			"id": 31,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				32
+			]
+		},
+		{
+			"id": 32,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				33
+			]
+		},
+		{
+			"id": 33,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				34
+			]
+		},
+		{
+			"id": 34,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				35
+			]
+		},
+		{
+			"id": 35,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				36
+			]
+		},
+		{
+			"id": 36,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				37
+			]
+		},
+		{
+			"id": 37,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				38
+			]
+		},
+		{
+			"id": 38,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				39
+			]
+		},
+		{
+			"id": 39,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				40
+			]
+		},
+		{
+			"id": 40,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				41
+			]
+		},
+		{
+			"id": 41,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4897",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/build/ext-src/BrowserViewWindowManager.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				42
+			]
+		},
+		{
+			"id": 42,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				43
+			]
+		},
+		{
+			"id": 43,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				44
+			]
+		},
+		{
+			"id": 44,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				45
+			]
+		},
+		{
+			"id": 45,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				46
+			]
+		},
+		{
+			"id": 46,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				47
+			]
+		},
+		{
+			"id": 47,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				48
+			]
+		},
+		{
+			"id": 48,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				49
+			]
+		},
+		{
+			"id": 49,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				50
+			]
+		},
+		{
+			"id": 50,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				51
+			]
+		},
+		{
+			"id": 51,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				52
+			]
+		},
+		{
+			"id": 52,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				53
+			]
+		},
+		{
+			"id": 53,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4899",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/build/ext-src/browser.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				54
+			]
+		},
+		{
+			"id": 54,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				55
+			]
+		},
+		{
+			"id": 55,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				56
+			]
+		},
+		{
+			"id": 56,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				57
+			]
+		},
+		{
+			"id": 57,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				58
+			]
+		},
+		{
+			"id": 58,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				59
+			]
+		},
+		{
+			"id": 59,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				60
+			]
+		},
+		{
+			"id": 60,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				61
+			]
+		},
+		{
+			"id": 61,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				62,
+				66
+			]
+		},
+		{
+			"id": 62,
+			"callFrame": {
+				"functionName": "Module._resolveFilename",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 661,
+				"columnNumber": 34
+			},
+			"hitCount": 0,
+			"children": [
+				63
+			]
+		},
+		{
+			"id": 63,
+			"callFrame": {
+				"functionName": "Module._findPath",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 394,
+				"columnNumber": 27
+			},
+			"hitCount": 0,
+			"children": [
+				64
+			]
+		},
+		{
+			"id": 64,
+			"callFrame": {
+				"functionName": "tryPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 252,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				65
+			]
+		},
+		{
+			"id": 65,
+			"callFrame": {
+				"functionName": "resolve",
+				"scriptId": "38",
+				"url": "path.js",
+				"lineNumber": 129,
+				"columnNumber": 9
+			},
+			"hitCount": 0
+		},
+		{
+			"id": 66,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				67
+			]
+		},
+		{
+			"id": 67,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				68,
+				78
+			]
+		},
+		{
+			"id": 68,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				69
+			]
+		},
+		{
+			"id": 69,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				70
+			]
+		},
+		{
+			"id": 70,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				71,
+				75
+			]
+		},
+		{
+			"id": 71,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				72
+			]
+		},
+		{
+			"id": 72,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				73
+			]
+		},
+		{
+			"id": 73,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				74
+			]
+		},
+		{
+			"id": 74,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 53,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 53
+				}
+			]
+		},
+		{
+			"id": 75,
+			"callFrame": {
+				"functionName": "tryReadSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 333,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				76
+			]
+		},
+		{
+			"id": 76,
+			"callFrame": {
+				"functionName": "readSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 488,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				77
+			]
+		},
+		{
+			"id": 77,
+			"callFrame": {
+				"functionName": "read",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 511,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 78,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				79,
+				86
+			]
+		},
+		{
+			"id": 79,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				80
+			]
+		},
+		{
+			"id": 80,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				81
+			]
+		},
+		{
+			"id": 81,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				82
+			]
+		},
+		{
+			"id": 82,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				83
+			]
+		},
+		{
+			"id": 83,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				84
+			]
+		},
+		{
+			"id": 84,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				85
+			]
+		},
+		{
+			"id": 85,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 20,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 20
+				}
+			]
+		},
+		{
+			"id": 86,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4916",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/puppeteer-core/index.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				87
+			]
+		},
+		{
+			"id": 87,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				88
+			]
+		},
+		{
+			"id": 88,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				89
+			]
+		},
+		{
+			"id": 89,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				90
+			]
+		},
+		{
+			"id": 90,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				91
+			]
+		},
+		{
+			"id": 91,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				92
+			]
+		},
+		{
+			"id": 92,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				93
+			]
+		},
+		{
+			"id": 93,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				94
+			]
+		},
+		{
+			"id": 94,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				95
+			]
+		},
+		{
+			"id": 95,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				96
+			]
+		},
+		{
+			"id": 96,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				97
+			]
+		},
+		{
+			"id": 97,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				98,
+				105
+			]
+		},
+		{
+			"id": 98,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				99
+			]
+		},
+		{
+			"id": 99,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				100
+			]
+		},
+		{
+			"id": 100,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				101
+			]
+		},
+		{
+			"id": 101,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				102
+			]
+		},
+		{
+			"id": 102,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				103
+			]
+		},
+		{
+			"id": 103,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				104
+			]
+		},
+		{
+			"id": 104,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 39,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 39
+				}
+			]
+		},
+		{
+			"id": 105,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4918",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/puppeteer-core/lib/Puppeteer.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				106
+			]
+		},
+		{
+			"id": 106,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				107
+			]
+		},
+		{
+			"id": 107,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				108
+			]
+		},
+		{
+			"id": 108,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				109
+			]
+		},
+		{
+			"id": 109,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				110
+			]
+		},
+		{
+			"id": 110,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				111
+			]
+		},
+		{
+			"id": 111,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				112
+			]
+		},
+		{
+			"id": 112,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				113
+			]
+		},
+		{
+			"id": 113,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				114
+			]
+		},
+		{
+			"id": 114,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				115
+			]
+		},
+		{
+			"id": 115,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				116,
+				123
+			]
+		},
+		{
+			"id": 116,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				117,
+				270
+			]
+		},
+		{
+			"id": 117,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				118
+			]
+		},
+		{
+			"id": 118,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				119
+			]
+		},
+		{
+			"id": 119,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				120
+			]
+		},
+		{
+			"id": 120,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				121
+			]
+		},
+		{
+			"id": 121,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				122
+			]
+		},
+		{
+			"id": 122,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 124,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 124
+				}
+			]
+		},
+		{
+			"id": 270,
+			"callFrame": {
+				"functionName": "splitPath",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 45,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				271
+			]
+		},
+		{
+			"id": 271,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 57,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 123,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				124,
+				131,
+				272
+			]
+		},
+		{
+			"id": 124,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				125
+			]
+		},
+		{
+			"id": 125,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				126
+			]
+		},
+		{
+			"id": 126,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				127
+			]
+		},
+		{
+			"id": 127,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				128
+			]
+		},
+		{
+			"id": 128,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				129
+			]
+		},
+		{
+			"id": 129,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				130
+			]
+		},
+		{
+			"id": 130,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 74,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 74
+				}
+			]
+		},
+		{
+			"id": 131,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4919",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/puppeteer-core/lib/helper.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				132
+			]
+		},
+		{
+			"id": 132,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				133
+			]
+		},
+		{
+			"id": 133,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				134
+			]
+		},
+		{
+			"id": 134,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				135
+			]
+		},
+		{
+			"id": 135,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				136
+			]
+		},
+		{
+			"id": 136,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				137
+			]
+		},
+		{
+			"id": 137,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				138
+			]
+		},
+		{
+			"id": 138,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				139
+			]
+		},
+		{
+			"id": 139,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				140,
+				148
+			]
+		},
+		{
+			"id": 140,
+			"callFrame": {
+				"functionName": "Module._resolveFilename",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 661,
+				"columnNumber": 34
+			},
+			"hitCount": 0,
+			"children": [
+				141
+			]
+		},
+		{
+			"id": 141,
+			"callFrame": {
+				"functionName": "Module._findPath",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 394,
+				"columnNumber": 27
+			},
+			"hitCount": 0,
+			"children": [
+				142,
+				165
+			]
+		},
+		{
+			"id": 142,
+			"callFrame": {
+				"functionName": "tryExtensions",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 313,
+				"columnNumber": 22
+			},
+			"hitCount": 0,
+			"children": [
+				143
+			]
+		},
+		{
+			"id": 143,
+			"callFrame": {
+				"functionName": "tryFile",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 298,
+				"columnNumber": 16
+			},
+			"hitCount": 0,
+			"children": [
+				144
+			]
+		},
+		{
+			"id": 144,
+			"callFrame": {
+				"functionName": "stat",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 91,
+				"columnNumber": 13
+			},
+			"hitCount": 0,
+			"children": [
+				145
+			]
+		},
+		{
+			"id": 145,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleStat",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 645,
+				"columnNumber": 47
+			},
+			"hitCount": 0,
+			"children": [
+				146
+			]
+		},
+		{
+			"id": 146,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleStat",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 645,
+				"columnNumber": 47
+			},
+			"hitCount": 0,
+			"children": [
+				147
+			]
+		},
+		{
+			"id": 147,
+			"callFrame": {
+				"functionName": "internalModuleStat",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 648,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 165,
+			"callFrame": {
+				"functionName": "tryPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 252,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				166
+			]
+		},
+		{
+			"id": 166,
+			"callFrame": {
+				"functionName": "readPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 227,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				167
+			]
+		},
+		{
+			"id": 167,
+			"callFrame": {
+				"functionName": "readPackageRaw",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 200,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				168
+			]
+		},
+		{
+			"id": 168,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				169
+			]
+		},
+		{
+			"id": 169,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				170
+			]
+		},
+		{
+			"id": 170,
+			"callFrame": {
+				"functionName": "internalModuleReadJSON",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 35,
+			"positionTicks": [
+				{
+					"line": 623,
+					"ticks": 35
+				}
+			]
+		},
+		{
+			"id": 148,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				149
+			]
+		},
+		{
+			"id": 149,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				150,
+				157
+			]
+		},
+		{
+			"id": 150,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				151,
+				171
+			]
+		},
+		{
+			"id": 151,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				152
+			]
+		},
+		{
+			"id": 152,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				153
+			]
+		},
+		{
+			"id": 153,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				154
+			]
+		},
+		{
+			"id": 154,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				155
+			]
+		},
+		{
+			"id": 155,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				156
+			]
+		},
+		{
+			"id": 156,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 71,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 71
+				}
+			]
+		},
+		{
+			"id": 171,
+			"callFrame": {
+				"functionName": "splitPath",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 45,
+				"columnNumber": 20
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 57,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 157,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				158,
+				172
+			]
+		},
+		{
+			"id": 158,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				159
+			]
+		},
+		{
+			"id": 159,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				160
+			]
+		},
+		{
+			"id": 160,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				161
+			]
+		},
+		{
+			"id": 161,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				162
+			]
+		},
+		{
+			"id": 162,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				163
+			]
+		},
+		{
+			"id": 163,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				164
+			]
+		},
+		{
+			"id": 164,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 40,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 40
+				}
+			]
+		},
+		{
+			"id": 172,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4921",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/puppeteer-core/node_modules/debug/src/index.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				173
+			]
+		},
+		{
+			"id": 173,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				174
+			]
+		},
+		{
+			"id": 174,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				175
+			]
+		},
+		{
+			"id": 175,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				176
+			]
+		},
+		{
+			"id": 176,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				177
+			]
+		},
+		{
+			"id": 177,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				178
+			]
+		},
+		{
+			"id": 178,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				179
+			]
+		},
+		{
+			"id": 179,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				180
+			]
+		},
+		{
+			"id": 180,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				181
+			]
+		},
+		{
+			"id": 181,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				182
+			]
+		},
+		{
+			"id": 182,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				183,
+				190
+			]
+		},
+		{
+			"id": 183,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				184
+			]
+		},
+		{
+			"id": 184,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				185
+			]
+		},
+		{
+			"id": 185,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				186
+			]
+		},
+		{
+			"id": 186,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				187
+			]
+		},
+		{
+			"id": 187,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				188
+			]
+		},
+		{
+			"id": 188,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				189
+			]
+		},
+		{
+			"id": 189,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 35,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 35
+				}
+			]
+		},
+		{
+			"id": 190,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				191,
+				198
+			]
+		},
+		{
+			"id": 191,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				192
+			]
+		},
+		{
+			"id": 192,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				193
+			]
+		},
+		{
+			"id": 193,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				194
+			]
+		},
+		{
+			"id": 194,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				195
+			]
+		},
+		{
+			"id": 195,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				196
+			]
+		},
+		{
+			"id": 196,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				197
+			]
+		},
+		{
+			"id": 197,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 36,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 36
+				}
+			]
+		},
+		{
+			"id": 198,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4922",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/puppeteer-core/node_modules/debug/src/node.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				199,
+				216
+			]
+		},
+		{
+			"id": 199,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				200
+			]
+		},
+		{
+			"id": 200,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				201
+			]
+		},
+		{
+			"id": 201,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				202
+			]
+		},
+		{
+			"id": 202,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				203
+			]
+		},
+		{
+			"id": 203,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				204
+			]
+		},
+		{
+			"id": 204,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				205
+			]
+		},
+		{
+			"id": 205,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				206
+			]
+		},
+		{
+			"id": 206,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				207
+			]
+		},
+		{
+			"id": 207,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				208
+			]
+		},
+		{
+			"id": 208,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				209
+			]
+		},
+		{
+			"id": 209,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				210
+			]
+		},
+		{
+			"id": 210,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				211
+			]
+		},
+		{
+			"id": 211,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				212
+			]
+		},
+		{
+			"id": 212,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				213
+			]
+		},
+		{
+			"id": 213,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				214
+			]
+		},
+		{
+			"id": 214,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				215
+			]
+		},
+		{
+			"id": 215,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 40,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 40
+				}
+			]
+		},
+		{
+			"id": 216,
+			"callFrame": {
+				"functionName": "setup",
+				"scriptId": "4923",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/puppeteer-core/node_modules/debug/src/common.js",
+				"lineNumber": 6,
+				"columnNumber": 14
+			},
+			"hitCount": 0,
+			"children": [
+				217
+			]
+		},
+		{
+			"id": 217,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				218
+			]
+		},
+		{
+			"id": 218,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				219
+			]
+		},
+		{
+			"id": 219,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				220
+			]
+		},
+		{
+			"id": 220,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				221
+			]
+		},
+		{
+			"id": 221,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				222
+			]
+		},
+		{
+			"id": 222,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				223
+			]
+		},
+		{
+			"id": 223,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				224
+			]
+		},
+		{
+			"id": 224,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				225,
+				246
+			]
+		},
+		{
+			"id": 225,
+			"callFrame": {
+				"functionName": "Module._resolveFilename",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 661,
+				"columnNumber": 34
+			},
+			"hitCount": 0,
+			"children": [
+				226
+			]
+		},
+		{
+			"id": 226,
+			"callFrame": {
+				"functionName": "Module._findPath",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 394,
+				"columnNumber": 27
+			},
+			"hitCount": 0,
+			"children": [
+				227
+			]
+		},
+		{
+			"id": 227,
+			"callFrame": {
+				"functionName": "tryPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 252,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				228,
+				233,
+				239
+			]
+		},
+		{
+			"id": 228,
+			"callFrame": {
+				"functionName": "readPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 227,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				229
+			]
+		},
+		{
+			"id": 229,
+			"callFrame": {
+				"functionName": "readPackageRaw",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 200,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				230
+			]
+		},
+		{
+			"id": 230,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				231
+			]
+		},
+		{
+			"id": 231,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				232
+			]
+		},
+		{
+			"id": 232,
+			"callFrame": {
+				"functionName": "internalModuleReadJSON",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 31,
+			"positionTicks": [
+				{
+					"line": 623,
+					"ticks": 31
+				}
+			]
+		},
+		{
+			"id": 233,
+			"callFrame": {
+				"functionName": "tryFile",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 298,
+				"columnNumber": 16
+			},
+			"hitCount": 0,
+			"children": [
+				234
+			]
+		},
+		{
+			"id": 234,
+			"callFrame": {
+				"functionName": "stat",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 91,
+				"columnNumber": 13
+			},
+			"hitCount": 0,
+			"children": [
+				235
+			]
+		},
+		{
+			"id": 235,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleStat",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 645,
+				"columnNumber": 47
+			},
+			"hitCount": 0,
+			"children": [
+				236
+			]
+		},
+		{
+			"id": 236,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleStat",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 645,
+				"columnNumber": 47
+			},
+			"hitCount": 0,
+			"children": [
+				237
+			]
+		},
+		{
+			"id": 237,
+			"callFrame": {
+				"functionName": "splitPath",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 45,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				238
+			]
+		},
+		{
+			"id": 238,
+			"callFrame": {
+				"functionName": "normalize",
+				"scriptId": "38",
+				"url": "path.js",
+				"lineNumber": 264,
+				"columnNumber": 11
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 308,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 239,
+			"callFrame": {
+				"functionName": "tryExtensions",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 313,
+				"columnNumber": 22
+			},
+			"hitCount": 0,
+			"children": [
+				240
+			]
+		},
+		{
+			"id": 240,
+			"callFrame": {
+				"functionName": "tryFile",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 298,
+				"columnNumber": 16
+			},
+			"hitCount": 0,
+			"children": [
+				241
+			]
+		},
+		{
+			"id": 241,
+			"callFrame": {
+				"functionName": "toRealPath",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 306,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				242
+			]
+		},
+		{
+			"id": 242,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 299,
+				"columnNumber": 22
+			},
+			"hitCount": 0,
+			"children": [
+				243
+			]
+		},
+		{
+			"id": 243,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 299,
+				"columnNumber": 22
+			},
+			"hitCount": 0,
+			"children": [
+				244
+			]
+		},
+		{
+			"id": 244,
+			"callFrame": {
+				"functionName": "realpathSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 1388,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				245
+			]
+		},
+		{
+			"id": 245,
+			"callFrame": {
+				"functionName": "lstat",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 1427,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 246,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				247
+			]
+		},
+		{
+			"id": 247,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				248,
+				262
+			]
+		},
+		{
+			"id": 248,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				249,
+				251
+			]
+		},
+		{
+			"id": 249,
+			"callFrame": {
+				"functionName": "splitPath",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 45,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				250
+			]
+		},
+		{
+			"id": 250,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 57,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 251,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				252
+			]
+		},
+		{
+			"id": 252,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				253,
+				257,
+				260
+			]
+		},
+		{
+			"id": 253,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				254
+			]
+		},
+		{
+			"id": 254,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				255
+			]
+		},
+		{
+			"id": 255,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				256
+			]
+		},
+		{
+			"id": 256,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 257,
+			"callFrame": {
+				"functionName": "tryReadSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 333,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				258
+			]
+		},
+		{
+			"id": 258,
+			"callFrame": {
+				"functionName": "readSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 488,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				259
+			]
+		},
+		{
+			"id": 259,
+			"callFrame": {
+				"functionName": "read",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 511,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 260,
+			"callFrame": {
+				"functionName": "toString",
+				"scriptId": "22",
+				"url": "buffer.js",
+				"lineNumber": 621,
+				"columnNumber": 45
+			},
+			"hitCount": 0,
+			"children": [
+				261
+			]
+		},
+		{
+			"id": 261,
+			"callFrame": {
+				"functionName": "stringSlice",
+				"scriptId": "22",
+				"url": "buffer.js",
+				"lineNumber": 567,
+				"columnNumber": 20
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 573,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 262,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				263
+			]
+		},
+		{
+			"id": 263,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				264
+			]
+		},
+		{
+			"id": 264,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				265
+			]
+		},
+		{
+			"id": 265,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				266
+			]
+		},
+		{
+			"id": 266,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				267
+			]
+		},
+		{
+			"id": 267,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				268
+			]
+		},
+		{
+			"id": 268,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				269
+			]
+		},
+		{
+			"id": 269,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 40,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 40
+				}
+			]
+		},
+		{
+			"id": 272,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4925",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/puppeteer-core/lib/Launcher.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				273
+			]
+		},
+		{
+			"id": 273,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				274
+			]
+		},
+		{
+			"id": 274,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				275
+			]
+		},
+		{
+			"id": 275,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				276
+			]
+		},
+		{
+			"id": 276,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				277
+			]
+		},
+		{
+			"id": 277,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				278
+			]
+		},
+		{
+			"id": 278,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				279
+			]
+		},
+		{
+			"id": 279,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				280
+			]
+		},
+		{
+			"id": 280,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				281
+			]
+		},
+		{
+			"id": 281,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				282
+			]
+		},
+		{
+			"id": 282,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				283,
+				290
+			]
+		},
+		{
+			"id": 283,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				284
+			]
+		},
+		{
+			"id": 284,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				285
+			]
+		},
+		{
+			"id": 285,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				286
+			]
+		},
+		{
+			"id": 286,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				287
+			]
+		},
+		{
+			"id": 287,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				288
+			]
+		},
+		{
+			"id": 288,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				289
+			]
+		},
+		{
+			"id": 289,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 42,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 42
+				}
+			]
+		},
+		{
+			"id": 290,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				291
+			]
+		},
+		{
+			"id": 291,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4926",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/rimraf/rimraf.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				292
+			]
+		},
+		{
+			"id": 292,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				293
+			]
+		},
+		{
+			"id": 293,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				294
+			]
+		},
+		{
+			"id": 294,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				295
+			]
+		},
+		{
+			"id": 295,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				296
+			]
+		},
+		{
+			"id": 296,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				297
+			]
+		},
+		{
+			"id": 297,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				298
+			]
+		},
+		{
+			"id": 298,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				299
+			]
+		},
+		{
+			"id": 299,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				300,
+				308
+			]
+		},
+		{
+			"id": 300,
+			"callFrame": {
+				"functionName": "Module._resolveFilename",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 661,
+				"columnNumber": 34
+			},
+			"hitCount": 0,
+			"children": [
+				301
+			]
+		},
+		{
+			"id": 301,
+			"callFrame": {
+				"functionName": "Module._findPath",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 394,
+				"columnNumber": 27
+			},
+			"hitCount": 0,
+			"children": [
+				302
+			]
+		},
+		{
+			"id": 302,
+			"callFrame": {
+				"functionName": "tryPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 252,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				303
+			]
+		},
+		{
+			"id": 303,
+			"callFrame": {
+				"functionName": "readPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 227,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				304
+			]
+		},
+		{
+			"id": 304,
+			"callFrame": {
+				"functionName": "readPackageRaw",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 200,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				305
+			]
+		},
+		{
+			"id": 305,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				306
+			]
+		},
+		{
+			"id": 306,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				307
+			]
+		},
+		{
+			"id": 307,
+			"callFrame": {
+				"functionName": "internalModuleReadJSON",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 39,
+			"positionTicks": [
+				{
+					"line": 623,
+					"ticks": 39
+				}
+			]
+		},
+		{
+			"id": 308,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				309
+			]
+		},
+		{
+			"id": 309,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				310
+			]
+		},
+		{
+			"id": 310,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				311
+			]
+		},
+		{
+			"id": 311,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4927",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/glob/glob.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				312
+			]
+		},
+		{
+			"id": 312,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				313
+			]
+		},
+		{
+			"id": 313,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				314
+			]
+		},
+		{
+			"id": 314,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				315
+			]
+		},
+		{
+			"id": 315,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				316
+			]
+		},
+		{
+			"id": 316,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				317
+			]
+		},
+		{
+			"id": 317,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				318
+			]
+		},
+		{
+			"id": 318,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				319
+			]
+		},
+		{
+			"id": 319,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				320,
+				330
+			]
+		},
+		{
+			"id": 320,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				321
+			]
+		},
+		{
+			"id": 321,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				322
+			]
+		},
+		{
+			"id": 322,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				323,
+				338
+			]
+		},
+		{
+			"id": 323,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				324
+			]
+		},
+		{
+			"id": 324,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				325
+			]
+		},
+		{
+			"id": 325,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				326
+			]
+		},
+		{
+			"id": 326,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				327
+			]
+		},
+		{
+			"id": 327,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				328
+			]
+		},
+		{
+			"id": 328,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				329
+			]
+		},
+		{
+			"id": 329,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 39,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 39
+				}
+			]
+		},
+		{
+			"id": 338,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4930",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/minimatch/minimatch.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				339
+			]
+		},
+		{
+			"id": 339,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				340
+			]
+		},
+		{
+			"id": 340,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				341
+			]
+		},
+		{
+			"id": 341,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				342
+			]
+		},
+		{
+			"id": 342,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				343
+			]
+		},
+		{
+			"id": 343,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				344
+			]
+		},
+		{
+			"id": 344,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				345
+			]
+		},
+		{
+			"id": 345,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				346
+			]
+		},
+		{
+			"id": 346,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				347,
+				355
+			]
+		},
+		{
+			"id": 347,
+			"callFrame": {
+				"functionName": "Module._resolveFilename",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 661,
+				"columnNumber": 34
+			},
+			"hitCount": 0,
+			"children": [
+				348
+			]
+		},
+		{
+			"id": 348,
+			"callFrame": {
+				"functionName": "Module._findPath",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 394,
+				"columnNumber": 27
+			},
+			"hitCount": 0,
+			"children": [
+				349
+			]
+		},
+		{
+			"id": 349,
+			"callFrame": {
+				"functionName": "tryPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 252,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				350
+			]
+		},
+		{
+			"id": 350,
+			"callFrame": {
+				"functionName": "readPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 227,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				351
+			]
+		},
+		{
+			"id": 351,
+			"callFrame": {
+				"functionName": "readPackageRaw",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 200,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				352
+			]
+		},
+		{
+			"id": 352,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				353
+			]
+		},
+		{
+			"id": 353,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				354
+			]
+		},
+		{
+			"id": 354,
+			"callFrame": {
+				"functionName": "internalModuleReadJSON",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 36,
+			"positionTicks": [
+				{
+					"line": 623,
+					"ticks": 36
+				}
+			]
+		},
+		{
+			"id": 355,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				356
+			]
+		},
+		{
+			"id": 356,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				357,
+				367
+			]
+		},
+		{
+			"id": 357,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				358
+			]
+		},
+		{
+			"id": 358,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				359
+			]
+		},
+		{
+			"id": 359,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				360,
+				364
+			]
+		},
+		{
+			"id": 360,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				361
+			]
+		},
+		{
+			"id": 361,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				362
+			]
+		},
+		{
+			"id": 362,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				363
+			]
+		},
+		{
+			"id": 363,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 32,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 32
+				}
+			]
+		},
+		{
+			"id": 364,
+			"callFrame": {
+				"functionName": "tryReadSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 333,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				365
+			]
+		},
+		{
+			"id": 365,
+			"callFrame": {
+				"functionName": "readSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 488,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				366
+			]
+		},
+		{
+			"id": 366,
+			"callFrame": {
+				"functionName": "read",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 511,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 367,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				368,
+				371,
+				378
+			]
+		},
+		{
+			"id": 368,
+			"callFrame": {
+				"functionName": "t._getCachedDataPath",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 16,
+				"columnNumber": 440
+			},
+			"hitCount": 0,
+			"children": [
+				369
+			]
+		},
+		{
+			"id": 369,
+			"callFrame": {
+				"functionName": "join",
+				"scriptId": "38",
+				"url": "path.js",
+				"lineNumber": 366,
+				"columnNumber": 6
+			},
+			"hitCount": 0,
+			"children": [
+				370
+			]
+		},
+		{
+			"id": 370,
+			"callFrame": {
+				"functionName": "normalize",
+				"scriptId": "38",
+				"url": "path.js",
+				"lineNumber": 264,
+				"columnNumber": 11
+			},
+			"hitCount": 1,
+			"positionTicks": [
+				{
+					"line": 273,
+					"ticks": 1
+				}
+			]
+		},
+		{
+			"id": 371,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				372
+			]
+		},
+		{
+			"id": 372,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				373
+			]
+		},
+		{
+			"id": 373,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				374
+			]
+		},
+		{
+			"id": 374,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				375
+			]
+		},
+		{
+			"id": 375,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				376
+			]
+		},
+		{
+			"id": 376,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				377
+			]
+		},
+		{
+			"id": 377,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 6,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 6
+				}
+			]
+		},
+		{
+			"id": 378,
+			"callFrame": {
+				"functionName": "",
+				"scriptId": "4931",
+				"url": "file:///c:/Users/olivi/.vscode/extensions/auchenberg.vscode-browser-preview-0.6.7/node_modules/brace-expansion/index.js",
+				"lineNumber": 0,
+				"columnNumber": 10
+			},
+			"hitCount": 0,
+			"children": [
+				379
+			]
+		},
+		{
+			"id": 379,
+			"callFrame": {
+				"functionName": "n",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 506
+			},
+			"hitCount": 0,
+			"children": [
+				380
+			]
+		},
+		{
+			"id": 380,
+			"callFrame": {
+				"functionName": "Module.require",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 766,
+				"columnNumber": 35
+			},
+			"hitCount": 0,
+			"children": [
+				381
+			]
+		},
+		{
+			"id": 381,
+			"callFrame": {
+				"functionName": "n._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 938,
+				"columnNumber": 372
+			},
+			"hitCount": 0,
+			"children": [
+				382
+			]
+		},
+		{
+			"id": 382,
+			"callFrame": {
+				"functionName": "i._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 941,
+				"columnNumber": 961
+			},
+			"hitCount": 0,
+			"children": [
+				383
+			]
+		},
+		{
+			"id": 383,
+			"callFrame": {
+				"functionName": "t._load",
+				"scriptId": "107",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js",
+				"lineNumber": 972,
+				"columnNumber": 828
+			},
+			"hitCount": 0,
+			"children": [
+				384
+			]
+		},
+		{
+			"id": 384,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				385
+			]
+		},
+		{
+			"id": 385,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 715,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				386
+			]
+		},
+		{
+			"id": 386,
+			"callFrame": {
+				"functionName": "Module._load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 602,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				387,
+				405
+			]
+		},
+		{
+			"id": 387,
+			"callFrame": {
+				"functionName": "Module._resolveFilename",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 661,
+				"columnNumber": 34
+			},
+			"hitCount": 0,
+			"children": [
+				388
+			]
+		},
+		{
+			"id": 388,
+			"callFrame": {
+				"functionName": "Module._findPath",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 394,
+				"columnNumber": 27
+			},
+			"hitCount": 0,
+			"children": [
+				389,
+				393,
+				399
+			]
+		},
+		{
+			"id": 389,
+			"callFrame": {
+				"functionName": "stat",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 91,
+				"columnNumber": 13
+			},
+			"hitCount": 0,
+			"children": [
+				390
+			]
+		},
+		{
+			"id": 390,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleStat",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 645,
+				"columnNumber": 47
+			},
+			"hitCount": 0,
+			"children": [
+				391
+			]
+		},
+		{
+			"id": 391,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleStat",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 645,
+				"columnNumber": 47
+			},
+			"hitCount": 0,
+			"children": [
+				392
+			]
+		},
+		{
+			"id": 392,
+			"callFrame": {
+				"functionName": "internalModuleStat",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 2,
+			"positionTicks": [
+				{
+					"line": 648,
+					"ticks": 2
+				}
+			]
+		},
+		{
+			"id": 393,
+			"callFrame": {
+				"functionName": "tryExtensions",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 313,
+				"columnNumber": 22
+			},
+			"hitCount": 0,
+			"children": [
+				394
+			]
+		},
+		{
+			"id": 394,
+			"callFrame": {
+				"functionName": "tryFile",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 298,
+				"columnNumber": 16
+			},
+			"hitCount": 0,
+			"children": [
+				395
+			]
+		},
+		{
+			"id": 395,
+			"callFrame": {
+				"functionName": "stat",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 91,
+				"columnNumber": 13
+			},
+			"hitCount": 0,
+			"children": [
+				396
+			]
+		},
+		{
+			"id": 396,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleStat",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 645,
+				"columnNumber": 47
+			},
+			"hitCount": 0,
+			"children": [
+				397
+			]
+		},
+		{
+			"id": 397,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleStat",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 645,
+				"columnNumber": 47
+			},
+			"hitCount": 0,
+			"children": [
+				398
+			]
+		},
+		{
+			"id": 398,
+			"callFrame": {
+				"functionName": "internalModuleStat",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 2,
+			"positionTicks": [
+				{
+					"line": 648,
+					"ticks": 2
+				}
+			]
+		},
+		{
+			"id": 399,
+			"callFrame": {
+				"functionName": "tryPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 252,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				400
+			]
+		},
+		{
+			"id": 400,
+			"callFrame": {
+				"functionName": "readPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 227,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				401
+			]
+		},
+		{
+			"id": 401,
+			"callFrame": {
+				"functionName": "readPackageRaw",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 200,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				402
+			]
+		},
+		{
+			"id": 402,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				403
+			]
+		},
+		{
+			"id": 403,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				404
+			]
+		},
+		{
+			"id": 404,
+			"callFrame": {
+				"functionName": "internalModuleReadJSON",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 34,
+			"positionTicks": [
+				{
+					"line": 623,
+					"ticks": 34
+				}
+			]
+		},
+		{
+			"id": 405,
+			"callFrame": {
+				"functionName": "Module.load",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 726,
+				"columnNumber": 32
+			},
+			"hitCount": 0,
+			"children": [
+				406
+			]
+		},
+		{
+			"id": 406,
+			"callFrame": {
+				"functionName": "Module._extensions..js",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 889,
+				"columnNumber": 36
+			},
+			"hitCount": 0,
+			"children": [
+				407,
+				414
+			]
+		},
+		{
+			"id": 407,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				408
+			]
+		},
+		{
+			"id": 408,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				409
+			]
+		},
+		{
+			"id": 409,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				410
+			]
+		},
+		{
+			"id": 410,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				411
+			]
+		},
+		{
+			"id": 411,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				412
+			]
+		},
+		{
+			"id": 412,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				413
+			]
+		},
+		{
+			"id": 413,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 42,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 42
+				}
+			]
+		},
+		{
+			"id": 414,
+			"callFrame": {
+				"functionName": "o._compile",
+				"scriptId": "90",
+				"url": "file:///c:/Users/olivi/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/loader.js",
+				"lineNumber": 14,
+				"columnNumber": 172
+			},
+			"hitCount": 0,
+			"children": [
+				415
+			]
+		},
+		{
+			"id": 415,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				416
+			]
+		},
+		{
+			"id": 416,
+			"callFrame": {
+				"functionName": "fs.readFileSync",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 539,
+				"columnNumber": 31
+			},
+			"hitCount": 0,
+			"children": [
+				417
+			]
+		},
+		{
+			"id": 417,
+			"callFrame": {
+				"functionName": "readFileSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 345,
+				"columnNumber": 21
+			},
+			"hitCount": 0,
+			"children": [
+				418
+			]
+		},
+		{
+			"id": 418,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				419
+			]
+		},
+		{
+			"id": 419,
+			"callFrame": {
+				"functionName": "func",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 136,
+				"columnNumber": 26
+			},
+			"hitCount": 0,
+			"children": [
+				420
+			]
+		},
+		{
+			"id": 420,
+			"callFrame": {
+				"functionName": "openSync",
+				"scriptId": "75",
+				"url": "fs.js",
+				"lineNumber": 437,
+				"columnNumber": 17
+			},
+			"hitCount": 0,
+			"children": [
+				421
+			]
+		},
+		{
+			"id": 421,
+			"callFrame": {
+				"functionName": "open",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 38,
+			"positionTicks": [
+				{
+					"line": 444,
+					"ticks": 38
+				}
+			]
+		},
+		{
+			"id": 330,
+			"callFrame": {
+				"functionName": "Module._resolveFilename",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 661,
+				"columnNumber": 34
+			},
+			"hitCount": 0,
+			"children": [
+				331
+			]
+		},
+		{
+			"id": 331,
+			"callFrame": {
+				"functionName": "Module._findPath",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 394,
+				"columnNumber": 27
+			},
+			"hitCount": 0,
+			"children": [
+				332
+			]
+		},
+		{
+			"id": 332,
+			"callFrame": {
+				"functionName": "tryPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 252,
+				"columnNumber": 19
+			},
+			"hitCount": 0,
+			"children": [
+				333
+			]
+		},
+		{
+			"id": 333,
+			"callFrame": {
+				"functionName": "readPackage",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 227,
+				"columnNumber": 20
+			},
+			"hitCount": 0,
+			"children": [
+				334
+			]
+		},
+		{
+			"id": 334,
+			"callFrame": {
+				"functionName": "readPackageRaw",
+				"scriptId": "73",
+				"url": "internal/modules/cjs/loader.js",
+				"lineNumber": 200,
+				"columnNumber": 23
+			},
+			"hitCount": 0,
+			"children": [
+				335
+			]
+		},
+		{
+			"id": 335,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				336
+			]
+		},
+		{
+			"id": 336,
+			"callFrame": {
+				"functionName": "internalBinding.internalModuleReadJSON",
+				"scriptId": "81",
+				"url": "electron/js2c/asar.js",
+				"lineNumber": 620,
+				"columnNumber": 51
+			},
+			"hitCount": 0,
+			"children": [
+				337
+			]
+		},
+		{
+			"id": 337,
+			"callFrame": {
+				"functionName": "internalModuleReadJSON",
+				"scriptId": "0",
+				"url": "",
+				"lineNumber": -1,
+				"columnNumber": -1
+			},
+			"hitCount": 44,
+			"positionTicks": [
+				{
+					"line": 623,
+					"ticks": 44
+				}
+			]
+		}
+	],
+	"startTime": 6677046000,
+	"endTime": 6684530000,
+	"samples": [
+		65,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		74,
+		77,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		85,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		104,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		147,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		164,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		170,
+		171,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		156,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		189,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		197,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		215,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		232,
+		238,
+		245,
+		250,
+		256,
+		259,
+		261,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		269,
+		271,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		122,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		130,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		289,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		307,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		329,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		337,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		354,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		363,
+		366,
+		370,
+		377,
+		377,
+		377,
+		377,
+		377,
+		377,
+		392,
+		392,
+		398,
+		398,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		404,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		413,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421,
+		421
+	],
+	"timeDeltas": [
+		1973000,
+		31000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		5000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		34000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		52000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		63000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		75000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		75000,
+		3000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		119000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		7000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		93000,
+		22000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		75000,
+		18000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		85000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		81000,
+		1000,
+		1000,
+		1000,
+		1000,
+		5000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		4000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		80000,
+		1000,
+		1000,
+		1000,
+		1000,
+		9000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		24000,
+		16000,
+		1000,
+		1000,
+		1000,
+		1000,
+		162000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		85000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		4000,
+		5000,
+		3000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		93000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		3000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		94000,
+		2000,
+		1000,
+		3000,
+		1000,
+		1000,
+		3000,
+		1000,
+		1000,
+		3000,
+		12000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		12000,
+		1000,
+		4000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		94000,
+		2000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		4000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		232000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		3000,
+		1000,
+		15000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		3000,
+		1000,
+		13000,
+		4000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		3000,
+		1000,
+		90000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		5000,
+		42000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		4000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		86000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		3000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		247000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		4000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		2000,
+		1000,
+		2000,
+		1000,
+		1000,
+		2000,
+		1000,
+		214000,
+		72000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		3000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		643000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		22000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		4000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		2000,
+		1000,
+		1000,
+		3000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		253000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		2000,
+		2000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		5000,
+		1000,
+		1000,
+		467000,
+		1000,
+		2000,
+		1000,
+		1000,
+		2000,
+		6000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		3000,
+		3000,
+		5000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		10000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		3000,
+		3000,
+		1000,
+		1000,
+		1000,
+		1000,
+		311000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		4000,
+		1000,
+		1000,
+		1000,
+		2000,
+		1000,
+		1000,
+		1000,
+		8000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		1000,
+		4000,
+		1000,
+		1000,
+		2000,
+		170000
+	]
+}
