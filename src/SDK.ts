@@ -110,6 +110,22 @@ export interface IHostContext {
 }
 
 /**
+ * Information about the current DevOps teamz
+ */
+export interface ITeamContext {
+
+    /**
+     * Unique GUID for this team
+     */
+    id: string;
+
+    /**
+     * Name of team
+     */
+    name: string;
+}
+
+/**
  * Identifier for the current extension
  */
 export interface IExtensionContext {
@@ -152,6 +168,11 @@ interface IExtensionHandshakeResult {
     },
     initialConfig?: { [key: string]: any };
     themeData?: { [ key: string]: string };
+    pageContext?: {
+        webContext?: {
+            team?: ITeamContext;
+        }
+    }
 }
 
 const hostControlId = "DevOps.HostControl";
@@ -163,6 +184,7 @@ let initialConfiguration: { [key: string]: any } | undefined;
 let initialContributionId: string | undefined;
 let userContext: IUserContext | undefined;
 let hostContext: IHostContext | undefined;
+let teamContext: ITeamContext | undefined;
 let themeElement: HTMLStyleElement;
 
 let resolveReady: () => void;
@@ -212,6 +234,7 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
             extensionContext = context.extension;
             userContext = context.user;
             hostContext = context.host;
+            teamContext = handshakeData.pageContext?.webContext?.team;
 
             if (handshakeData.themeData) {
                 applyTheme(handshakeData.themeData);
@@ -292,6 +315,17 @@ export function getHost(): IHostContext {
     }
     return hostContext;
 }
+
+/**
+* Gets information about the team that the page is targeting
+*/
+export function getTeam(): ITeamContext {
+    if (!teamContext) {
+        throw new Error(getWaitForReadyError("getTeam"));
+    }
+    return teamContext;
+}
+
 
 /**
 * Get the context about the extension that owns the content that is being hosted
