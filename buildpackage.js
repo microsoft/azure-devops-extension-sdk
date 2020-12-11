@@ -15,11 +15,14 @@ const UglifyES = require("uglify-es");
     console.log("# Cleaning bin. Running shelljs rm -rf ./bin");
     shell.rm("-rf", "./bin");
 
+    // cross platform compile command
+    command = `${path.join("node_modules", ".bin", './')}tsc -p ${path.join("./")}tsconfig.json`
+
     // Compile typescript
-    console.log("# Compiling TypeScript. Executing `node_modules\\.bin\\tsc -p ./tsconfig.json`.");
+    console.log(`# Compiling TypeScript. Executing \`${command}\`.`);
 
     try {
-        execSync("node_modules\\.bin\\tsc -p ./tsconfig.json", {
+        execSync(command, {
             stdio: [0, 1, 2],
             shell: true,
             cwd: __dirname,
