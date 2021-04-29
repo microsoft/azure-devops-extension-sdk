@@ -293,6 +293,8 @@ export class XDMChannel implements IXDMChannel {
             // so we can post back a response as a result or error as appropriate
             var methodArgs = [];
             if (rpcMessage.params) {
+                // Why are the method args different in the new pull request experience
+                // When registering an action-provider, the first param is now the contribution id...
                 methodArgs = <any[]>this._customDeserializeObject(rpcMessage.params, {});
             }
 
