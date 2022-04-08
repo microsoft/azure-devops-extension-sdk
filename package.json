@@ -1,10 +1,10 @@
 {
-  "name": "azure-devops-extension-sdk",
+  "name": "azure-devops-extension-sdk-with-more-context",
   "version": "2.0.11",
   "description": "Azure DevOps web extension JavaScript library.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/azure-devops-extension-sdk.git"
+    "url": "https://github.com/yongmams/azure-devops-extension-sdk.git"
   },
   "scripts": {
     "build": "node buildpackage.js"
@@ -14,7 +14,7 @@
     "Azure DevOps",
     "Visual Studio Team Services"
   ],
-  "author": "Microsoft",
+  "author": "yongmams",
   "license": "MIT",
   "homepage": "https://docs.microsoft.com/en-us/azure/devops/integrate",
   "main": "SDK.js",
