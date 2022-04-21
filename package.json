@@ -1,5 +1,5 @@
 {
-  "name": "azure-devops-extension-sdk-with-more-context",
+  "name": "azure-devops-extension-sdk",
   "version": "2.0.11",
   "description": "Azure DevOps web extension JavaScript library.",
   "repository": {
