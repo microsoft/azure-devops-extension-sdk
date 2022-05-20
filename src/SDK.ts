@@ -1,9 +1,14 @@
+
 import { channelManager } from "./XDM";
+
+export * from "./VSS"
+
 
 /**
  * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/3.0
  */
 export const sdkVersion = 3.0;
+
 
 const global = window as any;
 if (global._AzureDevOpsSDKVersion) {
@@ -11,6 +16,8 @@ if (global._AzureDevOpsSDKVersion) {
 }
 
 global._AzureDevOpsSDKVersion = sdkVersion;
+
+
 
 /**
  * Options for extension initialization -- passed to DevOps.init()
@@ -133,6 +140,11 @@ export interface IExtensionContext {
      * Version of the extension
      */
     version: string;
+
+     /**
+     * Base URI of the extension
+     */
+    baseUri: string
 }
 
 interface IExtensionHandshakeOptions extends IExtensionInitOptions {
@@ -159,6 +171,7 @@ const serviceManagerId = "DevOps.ServiceManager";
 const parentChannel = channelManager.addChannel(window.parent);
 
 let extensionContext: IExtensionContext | undefined;
+let initOptions: IExtensionInitOptions | undefined;
 let initialConfiguration: { [key: string]: any } | undefined;
 let initialContributionId: string | undefined;
 let userContext: IUserContext | undefined;
@@ -169,6 +182,8 @@ let resolveReady: () => void;
 const readyPromise = new Promise<void>((resolve) => {
     resolveReady = resolve;
 });
+
+
 
 /**
  * Register a method so that the host frame can invoke events
@@ -192,14 +207,23 @@ parentChannel.getObjectRegistry().register("DevOps.SdkClient", {
     dispatchEvent: dispatchEvent
 });
 
+
+export async function requireModule<T>(module: string) : Promise<T> {
+    return await new Promise<T>((resolve) => {
+        VSS.require([module], (item: T) => {
+            resolve(item)
+        })
+    });
+}
 /**
  * Initiates the handshake with the host window.
  *
  * @param options - Initialization options for the extension.
  */
-export function init(options?: IExtensionInitOptions): Promise<void> {
+export async function init(options?: IExtensionInitOptions): Promise<void> {
 
-    return new Promise((resolve) => {
+    initOptions = options;
+    await new Promise<void>((resolve) => {
 
         const initOptions = { ...options, sdkVersion };
 
@@ -221,10 +245,26 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
                 });
             }
 
-            resolveReady();
             resolve();
         });
     });
+
+    await new Promise<void>((resolve) => {
+        const initOptions: IExtensionInitOptions = { ...options };
+
+        VSS.init({
+            applyTheme: initOptions.applyTheme,
+            explicitNotifyLoaded: !initOptions.loaded,
+            parentChannel: parentChannel
+        })
+
+        VSS.ready(() => {
+            resolveReady();
+            resolve()
+        })
+    })
+
+
 }
 
 /**
@@ -385,3 +425,4 @@ export function applyTheme(themeData: { [varName: string]: string }): void {
 
     dispatchEvent("themeApplied", { detail: themeData });
 }
+

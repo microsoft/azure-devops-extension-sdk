@@ -308,7 +308,7 @@ export class XDMChannel implements IXDMChannel {
                 this._success(rpcMessage, result, rpcMessage.handshakeToken);
             }
         }
-        catch (exception) {
+        catch (exception: any) {
             // send back as error if an exception is thrown
             this.error(rpcMessage, exception);
         }
@@ -322,10 +322,10 @@ export class XDMChannel implements IXDMChannel {
         }
 
         // Look in the channel registry first
-        var registeredObject = this.registry.getInstance(instanceId, instanceContext);
+        var registeredObject = this.registry.getInstance<Object>(instanceId, instanceContext);
         if (!registeredObject) {
             // Look in the global registry as a fallback
-            registeredObject = globalObjectRegistry.getInstance(instanceId, instanceContext);
+            registeredObject = globalObjectRegistry.getInstance<Object>(instanceId, instanceContext);
         }
 
         return registeredObject;
