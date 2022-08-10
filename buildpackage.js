@@ -4,18 +4,18 @@
 
 const { execSync } = require("child_process");
 const fs = require("fs");
+const fsPromise = require("fs/promises");
 const glob = require("glob");
 const path = require("path");
-const copy = require("recursive-copy");
-const shell = require("shelljs");
+const rimraf = require("rimraf");
 const UglifyES = require("uglify-es");
 
 (async function() {
     // Clean bin directory
-    console.log("# Cleaning bin. Running shelljs rm -rf ./bin");
-    shell.rm("-rf", "./bin");
+    console.log("# Cleaning bin. Running rimraf ./bin");
+    rimraf.sync("./bin");
 
-    // Compile typescript
+    // Compile typescript, .d.ts files are directly placed in output folder
     console.log("# Compiling TypeScript. Executing `node_modules\\.bin\\tsc -p ./tsconfig.json`.");
 
     try {
@@ -29,21 +29,8 @@ const UglifyES = require("uglify-es");
         process.exit(1);
     }
 
-    // Copy ts files to bin
-    console.log("# Copy declare files to bin.");
-    try {
-        await copy(path.join(__dirname, "src"), path.join(__dirname, "bin"), {
-            filter: f => {
-                return f.endsWith(".d.ts");
-            },
-        });
-    } catch (e) {
-        console.log("Copy failed. " + error);
-    }
-
     // Uglify JavaScript
     console.log("# Minifying JS using the UglifyES API, replacing un-minified files.");
-    let count = 0;
 
     const files = await new Promise((resolve, reject) => {
         glob("./bin/**/*.js", (err, files) => {
@@ -56,24 +43,21 @@ const UglifyES = require("uglify-es");
     });
 
     for (const file of files) {
-        if (file.includes("node_modules/")) {
-            continue;
-        }
         fs.writeFileSync(
-            file.substr(0, file.length - 2) + "min.js",
+            file.replace(/\.js$/, ".min.js"),
             UglifyES.minify(fs.readFileSync(file, "utf-8"), { compress: true, mangle: true }).code,
             "utf-8",
         );
-        count++;
     }
-    console.log(`-- Minified ${count} files.`);
+    console.log(`-- Minified ${files.length} files.`);
 
     // Copy package.json, LICENSE, README.md to bin
     console.log("# Copying package.json, LICENSE, and README.md to bin.");
+    const fileNames = ["package.json", "LICENSE", "README.md"];
     try {
-        await copy(path.join(__dirname, "package.json"), path.join(__dirname, "bin", "package.json"));
-        await copy(path.join(__dirname, "LICENSE"), path.join(__dirname, "bin", "LICENSE"));
-        await copy(path.join(__dirname, "README.md"), path.join(__dirname, "bin", "README.md"));
+        await Promise.all(
+            fileNames.map(
+                fileName => fsPromise.copyFile(path.join(__dirname, fileName), path.join(__dirname, "bin", fileName))));
     } catch (error) {
         console.log("ERROR: Failed to copy package.json, LICENSE, or README.md - " + error);
         process.exit(1);

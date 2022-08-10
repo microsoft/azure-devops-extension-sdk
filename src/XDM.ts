@@ -1,6 +1,3 @@
-import "es6-promise/auto";
-import "es6-object-assign/auto";
-
 /**
 * Interface for a single XDM channel
 */
@@ -310,7 +307,7 @@ export class XDMChannel implements IXDMChannel {
         }
         catch (exception) {
             // send back as error if an exception is thrown
-            this.error(rpcMessage, exception);
+            this.error(rpcMessage, exception as Error);
         }
     }
 
@@ -328,7 +325,7 @@ export class XDMChannel implements IXDMChannel {
             registeredObject = globalObjectRegistry.getInstance(instanceId, instanceContext);
         }
 
-        return registeredObject;
+        return registeredObject as Object;
     }
 
     /**
