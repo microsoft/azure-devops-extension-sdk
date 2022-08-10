@@ -1,20 +1,15 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "ES2019",
         "declaration": true,
         "rootDir": "src/",
         "outDir": "bin/",
         "experimentalDecorators": true,
-        "module": "amd",
-        "moduleResolution": "node",
+        "module": "ES2015",
+        "moduleResolution": "Node",
         "noImplicitAny": true,
         "noImplicitThis": true,
-        "strict": true,
-        "lib": [
-            "es5",
-            "es6",
-            "dom",
-            "es2015.promise"
-        ]
+        "skipLibCheck": true,
+        "strict": true
     }
 }
