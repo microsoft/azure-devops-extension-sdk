@@ -1,5 +1,12 @@
 # Azure DevOps Web Extension SDK
 
+> This repo was formed from [azure-devops-extension-sdk](https://github.com/microsoft/azure-devops-extension-sdk). 
+>
+> This fork is done to support widgets with a deep intergration of the legacy package `vss-web-extension-sdk` into `azure-devops-extension-sdk`. There exists a PR but has not been merged yet. You can find more info [here](https://github.com/microsoft/azure-devops-extension-sdk/issues/22#issuecomment-1133211928)
+>
+> 
+> Until this gets merged, you can use with the following:
+> - `npm install @htekdev/azure-devops-extension-sdk`
 ## Overview
 
 Client SDK for developing [Azure DevOps extensions](https://docs.microsoft.com/en-us/azure/devops/extend/overview).

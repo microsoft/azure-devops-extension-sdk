@@ -10,6 +10,9 @@
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strict": true,
+        "types": [
+            "@htekdev/vss-web-extension-sdk"
+        ],
         "lib": [
             "es5",
             "es6",
@@ -17,4 +20,5 @@
             "es2015.promise"
         ]
     }
+
 }

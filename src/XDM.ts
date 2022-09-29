@@ -5,7 +5,7 @@ import "es6-object-assign/auto";
 * Interface for a single XDM channel
 */
 export interface IXDMChannel {
-
+    id: string;
     /**
     * Invoke a method via RPC. Lookup the registered object on the remote end of the channel and invoke the specified method.
     *
@@ -42,8 +42,9 @@ export interface IXDMChannelManager {
     *
     * @param window - Target iframe window to communicate with
     * @param targetOrigin - Url of the target iframe (if known)
+    * @param registry - Registry to be used for channel (if known)
     */
-    addChannel(window: Window, targetOrigin?: string): IXDMChannel;
+    addChannel(window: Window, targetOrigin?: string, registry?: IXDMObjectRegistry ): IXDMChannel;
 
     /**
     * Removes an XDM channel, allowing it to be disposed
@@ -192,6 +193,7 @@ export class XDMObjectRegistry implements IXDMObjectRegistry {
 
 const MAX_XDM_DEPTH = 100;
 let nextChannelId = 1;
+let nextMessageId = 1;
 
 /**
  * Represents a channel of communication between frames\document
@@ -203,20 +205,19 @@ export class XDMChannel implements IXDMChannel {
     private postToWindow: Window;
     private targetOrigin: string | undefined;
     private handshakeToken: string | undefined;
-    private registry: XDMObjectRegistry;
+    private registry: IXDMObjectRegistry;
     private channelId: number;
 
-    private nextMessageId: number = 1;
     private nextProxyId: number = 1;
     private proxyFunctions: { [name: string]: Function } = {};
-
-    constructor(postToWindow: Window, targetOrigin?: string) {
+    public id: string;
+    constructor(postToWindow: Window, targetOrigin?: string, registry?: IXDMObjectRegistry) {
 
         this.postToWindow = postToWindow;
         this.targetOrigin = targetOrigin;
-        this.registry = new XDMObjectRegistry();
+        this.registry = registry ?? new XDMObjectRegistry();
         this.channelId = nextChannelId++;
-
+        this.id = "channel_" + this.channelId;
         if (!this.targetOrigin) {
             this.handshakeToken = newFingerprint();
         }
@@ -243,7 +244,7 @@ export class XDMChannel implements IXDMChannel {
     public async invokeRemoteMethod<T>(methodName: string, instanceId: string, params?: any[], instanceContextData?: Object, serializationSettings?: ISerializationSettings): Promise<T> {
 
         const message: IJsonRpcMessage = {
-            id: this.nextMessageId++,
+            id: nextMessageId++,
             methodName: methodName,
             instanceId: instanceId,
             instanceContext: instanceContextData,
@@ -308,7 +309,7 @@ export class XDMChannel implements IXDMChannel {
                 this._success(rpcMessage, result, rpcMessage.handshakeToken);
             }
         }
-        catch (exception) {
+        catch (exception: any) {
             // send back as error if an exception is thrown
             this.error(rpcMessage, exception);
         }
@@ -322,10 +323,10 @@ export class XDMChannel implements IXDMChannel {
         }
 
         // Look in the channel registry first
-        var registeredObject = this.registry.getInstance(instanceId, instanceContext);
+        var registeredObject = this.registry.getInstance<Object>(instanceId, instanceContext);
         if (!registeredObject) {
             // Look in the global registry as a fallback
-            registeredObject = globalObjectRegistry.getInstance(instanceId, instanceContext);
+            registeredObject = globalObjectRegistry.getInstance<Object>(instanceId, instanceContext);
         }
 
         return registeredObject;
@@ -611,9 +612,10 @@ class XDMChannelManager implements IXDMChannelManager {
     *
     * @param window - Target iframe window to communicate with
     * @param targetOrigin - Url of the target iframe (if known)
+    * @param registry - Registry to be used (if known)
     */
-    public addChannel(window: Window, targetOrigin?: string): IXDMChannel {
-        const channel = new XDMChannel(window, targetOrigin);
+    public addChannel(window: Window, targetOrigin?: string, registry?: IXDMObjectRegistry ): IXDMChannel {
+        const channel = new XDMChannel(window, targetOrigin, registry);
         this._channels.push(channel);
         return channel;
     }
@@ -629,6 +631,7 @@ class XDMChannelManager implements IXDMChannelManager {
         if (typeof event.data === "string") {
             try {
                 rpcMessage = JSON.parse(event.data);
+                console.debug(`Received message: `,event);
             }
             catch (error) {
                 // The message is not a valid JSON string. Not one of our events.
@@ -643,7 +646,12 @@ class XDMChannelManager implements IXDMChannelManager {
                 if (channel.owns(event.source, event.origin, rpcMessage)) {
                     // keep a reference to the channel owner found. 
                     channelOwner = channel;
-                    handled = channel.onMessage(rpcMessage) || handled;
+                    const wasHandled = channel.onMessage(rpcMessage)
+                    if(wasHandled){
+                        console.debug(`Channel ${channel.id} handled message: `,rpcMessage);
+                    }
+                    handled = wasHandled || handled;
+                    
                 }
             }
 
