@@ -36,6 +36,16 @@ export interface IExtensionInitOptions {
      * to be applied to this extension content. Defaults to true.
      */
     applyTheme?: boolean;
+
+    /**
+     * 
+     */
+    usePlatformStyles?: boolean;
+    
+    /**
+     * 
+     */
+    usePlatformScripts?: boolean;
 }
 
 /**
@@ -169,6 +179,7 @@ interface IExtensionHandshakeResult {
 const hostControlId = "DevOps.HostControl";
 const serviceManagerId = "DevOps.ServiceManager";
 const parentChannel = channelManager.addChannel(window.parent);
+const legacyParentChannel = channelManager.addChannel(window.parent, undefined, parentChannel.getObjectRegistry());
 
 let extensionContext: IExtensionContext | undefined;
 let initOptions: IExtensionInitOptions | undefined;
@@ -179,10 +190,13 @@ let hostContext: IHostContext | undefined;
 let themeElement: HTMLStyleElement;
 
 let resolveReady: () => void;
+
 const readyPromise = new Promise<void>((resolve) => {
     resolveReady = resolve;
 });
-
+readyPromise.then(() => {
+    console.log("Ready has been resolved...")
+})
 
 
 /**
@@ -210,7 +224,7 @@ parentChannel.getObjectRegistry().register("DevOps.SdkClient", {
 
 export async function requireModule<T>(module: string) : Promise<T> {
     return await new Promise<T>((resolve) => {
-        VSS.require([module], (item: T) => {
+        VSS.require(module, (item: T) => {
             resolve(item)
         })
     });
@@ -255,9 +269,11 @@ export async function init(options?: IExtensionInitOptions): Promise<void> {
         VSS.init({
             applyTheme: initOptions.applyTheme,
             explicitNotifyLoaded: !initOptions.loaded,
-            parentChannel: parentChannel
+            usePlatformStyles: initOptions.usePlatformStyles,
+            usePlatformScripts: initOptions.usePlatformScripts,
+            parentChannel: legacyParentChannel
         })
-
+        
         VSS.ready(() => {
             resolveReady();
             resolve()

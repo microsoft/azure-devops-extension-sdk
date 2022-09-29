@@ -103,6 +103,7 @@ const UglifyES = require("uglify-es");
     
 
 
+
     // Generate index.js
     console.log("# Generate SDK.js");
     fs.writeFileSync(

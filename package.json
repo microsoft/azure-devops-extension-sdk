@@ -1,6 +1,6 @@
 {
   "name": "@htekdev/azure-devops-extension-sdk",
-  "version": "2.1.23",
+  "version": "2.1.32",
   "description": "Azure DevOps web extension JavaScript library.",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "main": "SDK.js",
   "types": "SDK.d.ts",
   "dependencies": {
-    "@htekdev/vss-web-extension-sdk": "^6.0.4",
+    "@htekdev/vss-web-extension-sdk": "^5.140.1",
     "es6-object-assign": "^1.1.0",
     "es6-promise": "^4.2.5"
   },
