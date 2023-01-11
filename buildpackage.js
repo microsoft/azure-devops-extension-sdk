@@ -70,12 +70,24 @@ const UglifyES = require("uglify-es");
 
     // Copy package.json, LICENSE, README.md to bin
     console.log("# Copying package.json, LICENSE, and README.md to bin.");
-    try {
-        await copy(path.join(__dirname, "package.json"), path.join(__dirname, "bin", "package.json"));
-        await copy(path.join(__dirname, "LICENSE"), path.join(__dirname, "bin", "LICENSE"));
-        await copy(path.join(__dirname, "README.md"), path.join(__dirname, "bin", "README.md"));
-    } catch (error) {
-        console.log("ERROR: Failed to copy package.json, LICENSE, or README.md - " + error);
-        process.exit(1);
-    }
+    //try {
+        fs.copyFile(path.join(__dirname, "package.json"), path.join(__dirname, "bin", "package.json"), (err) => {
+            if (err) throw err;
+            console.log('File was copied to destination');
+        });
+        fs.copyFile(path.join(__dirname, "LICENSE"), path.join(__dirname, "bin", "LICENSE"), (err) => {
+          if (err) throw err;
+          console.log('File was copied to destination');
+        });
+        fs.copyFile(path.join(__dirname, "README.md"), path.join(__dirname, "bin", "README.md"), (err) => {
+          if (err) throw err;
+          console.log('File was copied to destination');
+        });
+        //await copy(path.join(__dirname, "package.json"), path.join(__dirname, "bin", "package.json"));
+        //await copy(path.join(__dirname, "LICENSE.t"), path.join(__dirname, "bin", "LICENSE"));
+        //await copy(path.join(__dirname, "README.md"), path.join(__dirname, "bin", "README.md"));
+    //} catch (error) {
+    //    console.log("ERROR: Failed to copy package.json, LICENSE, or README.md - " + error);
+    //    process.exit(1);
+    //}
 })();
