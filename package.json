@@ -1,6 +1,6 @@
 {
   "name": "azure-devops-extension-sdk",
-  "version": "2.0.11",
+  "version": "2.1.0",
   "description": "Azure DevOps web extension JavaScript library.",
   "repository": {
     "type": "git",
@@ -20,13 +20,13 @@
   "main": "SDK.js",
   "types": "SDK.d.ts",
   "dependencies": {
-    "es6-promise": "^4.2.5",
-    "es6-object-assign": "^1.1.0"
+    "es6-object-assign": "^1.1.0",
+    "es6-promise": "^4.2.5"
   },
   "devDependencies": {
     "glob": "~7.1.2",
     "recursive-copy": "~2.0.7",
-    "shelljs": "~0.7.8",
+    "shelljs": "^0.8.5",
     "typescript": "^2.9.2",
     "uglify-es": "~3.1.3"
   }
