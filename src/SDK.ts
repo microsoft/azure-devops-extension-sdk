@@ -32,41 +32,10 @@ export interface IExtensionInitOptions {
 }
 
 /**
- * Information about the current user
- */
-export interface IUserContext {
-
-    /**
-     * Identity descriptor used to represent this user. In the format of {subject-type}.{base64-encoded-subject-id}
-     */
-    descriptor: string;
-
-    /**
-     * Unique id for the user
-     */
-    id: string;
-
-    /**
-     * Name of the user (email/login)
-     */
-    name: string;
-
-    /**
-     * The user's display name (First name / Last name)
-     */
-    displayName: string;
-
-    /**
-     * Url to the user's profile image
-     */
-    imageUrl: string;
-}
-
-/**
  * DevOps host level
  */
 export enum HostType {
-
+    Unknown = 0,
     /**
      * The Deployment host
      */
@@ -139,7 +108,6 @@ export interface IExtensionContext {
  * Information about the current DevOps team
  */
 export interface ITeamContext {
-
     /**
      * Unique GUID for this team
      */
@@ -149,159 +117,6 @@ export interface ITeamContext {
      * Name of team
      */
     name: string;
-}
-
-/**
-* Model that can be used to customize the values sent to AppInsights via "trackPage"
-*/
-export interface AppInsightsCustomTrackPageData {
-    alias: string;
-    metrics: {
-        [key: string]: any;
-    };
-    pageName: string;
-    properties: {
-        [key: string]: string;
-    };
-}
-
-/**
-* Model used to configure how TFS reports usage data to Application Insights
-*/
-export interface AppInsightsConfiguration {
-    /**
-    * If true, automatically call "trackPage" when the page is loaded
-    */
-    autoTrackPage: boolean;
-    /**
-    * Optional data used to override the default values sent to trackPage
-    */
-    customTrackPageData: AppInsightsCustomTrackPageData;
-    /**
-    * Set to false if app insights reporting is not enabled/configured
-    */
-    enabled: boolean;
-    /**
-    * The url from which to retrieve app insights scripts
-    */
-    insightsScriptUrl: string;
-    /**
-    * The instrumentation key used to track this deployment's usage
-    */
-    instrumentationKey: string;
-    /**
-    * If true, include collection, project, and team info in the track-page urls
-    */
-    trackProjectInfo: boolean;
-}
-
-/**
-* Reference to a javascript file to include on a page
-*/
-export interface JavascriptFileReference {
-    /**
-    * Condition to check in the case that Url lives on a CDN. The fallback script will be included if this check fails.
-    */
-    fallbackCondition: string;
-    /**
-    * Fallback url to use in case Url lives on a CDN
-    */
-    fallbackUrl: string;
-    /**
-    * Id of the reference (JQuery, JQueryUI, MicrosoftAjax, etc.)
-    */
-    identifier: string;
-    /**
-    * Is this a core javascript file that needs to be included in all child extension frames
-    */
-    isCoreModule: boolean;
-    /**
-    * Url of the javascript reference
-    */
-    url: string;
-}
-
-/**
-* Reference to a CSS file to include on a page
-*/
-export interface StylesheetReference {
-    /**
-    * Url of the high-contrast version of the CSS file
-    */
-    highContrastUrl: string;
-    /**
-    * Is this a core stylesheet that needs to be included in child frames
-    */
-    isCoreStylesheet: boolean;
-    /**
-    * Url of the CSS file
-    */
-    url: string;
-}
-
-/**
-* Contains lists of script and css references that need to be included on the page in order for the controls used by the page to work.
-*/
-export interface CoreReferencesContext {
-    /**
-    * Core 3rd party javascript bundle reference
-    */
-    coreScriptsBundle: JavascriptFileReference;
-    /**
-    * Core VSS javascript bundle reference for extension frames
-    */
-    extensionCoreReferences: JavascriptFileReference;
-    /**
-    * Core javascript files referenced on a page
-    */
-    scripts: JavascriptFileReference[];
-    /**
-    * Core CSS files referenced on a page
-    */
-    stylesheets: StylesheetReference[];
-}
-
-export interface DiagnosticsContext {
-    /**
-    * Id of the current activity
-    */
-    activityId: string;
-    allowStatsCollection: boolean;
-    /**
-    * Whether or not to enable static content bundling. This is on by default but the value can be overridden with a TFS-BUNDLING cookie or registry entry.
-    */
-    bundlingEnabled: boolean;
-    /**
-    * True if the CDN feature flag is enabled.
-    */
-    cdnAvailable: boolean;
-    /**
-    * True if the CDN feature flag is enabled and the user has not disabled CDN with a cookie.
-    */
-    cdnEnabled: boolean;
-    clientLogLevel: number;
-    debugMode: boolean;
-    /**
-    * Whether or not to diagnose the bundles.
-    */
-    diagnoseBundles: boolean;
-    inExtensionFallbackMode: boolean;
-    isDevFabric: boolean;
-    serviceVersion: string;
-    sessionId: string;
-    tracePointCollectionEnabled: boolean;
-    tracePointProfileEnd: string;
-    tracePointProfileStart: string;
-    /**
-    * Denotes the version of the web platform consumed by this service. Of the form M###.
-    */
-    webPlatformVersion: string;
-}
-
-export interface FeatureAvailabilityContext {
-    featureStates: {
-        [key: string]: boolean;
-    };
 }
 
 export interface GlobalizationContext {
@@ -317,7 +132,7 @@ export interface GlobalizationContext {
 }
 
 /**
-* Model representing a hub in VSTS pages' navigation menu
+* Model representing a hub in Azure DevOps pages' navigation menu
 */
 export interface Hub {
     ariaLabel: string;
@@ -334,7 +149,7 @@ export interface Hub {
 }
 
 /**
-* Model representing a hub group in VSTS pages' navigation menu
+* Model representing a hub group in Azure DevOps pages' navigation menu
 */
 export interface HubGroup {
     builtIn: boolean;
@@ -450,13 +265,6 @@ interface NavigationContext {
     topMostLevel: NavigationContextLevels;
 }
 
-/**
-* Holds a lookup of urls for different services (at different host levels)
-*/
-interface ServiceLocations {
-    locations: { [key: string]: { [key: number]: string; }; };
-}
-
 interface DaylightSavingsAdjustmentEntry {
     /**
     * Millisecond adjustment from UTC
@@ -472,113 +280,21 @@ interface TimeZonesConfiguration {
     daylightSavingsAdjustments: DaylightSavingsAdjustmentEntry[];
 }
 
-/**
-* MVC api configuration
-*/
-interface ConfigurationContextApis {
-    /**
-    * Specifies the path prefix for the area
-    */
-    areaPrefix: string;
-    /**
-    * Specifies the path prefix for the controller
-    */
-    controllerPrefix: string;
-    /**
-    * Api-version for legacy rpc-style web access api controllers See WebApiVersionClient for the version coming from the client/browser.  The return value is a positive whole number >= 1.
-    */
-    webApiVersion: string;
-}
-
-interface TfsMailSettings {
+interface MailSettings {
     enabled: boolean;
-}
-
-/**
-* Paths to server resources
-*/
-export interface ConfigurationContextPaths {
-    /**
-    * Path (no CDN) to versioned static content
-    */
-    cdnFallbackStaticRootTfs: string;
-    /**
-    * Relative path to the _content path of the web application
-    */
-    resourcesPath: string;
-    /**
-    * Relative path to the root of the web application
-    */
-    rootPath: string;
-    /**
-    * Absolute path to build static content URLs from. May be relative or fully-qualified.
-    */
-    staticContentRootPath: string;
-    /**
-    * Static content version stamp
-    */
-    staticContentVersion: string;
-    /**
-    * Relative path to unversioned 3rd party static content
-    */
-    staticRoot3rdParty: string;
-    /**
-    * Relative path to versioned static content
-    */
-    staticRootTfs: string;
 }
 
 /**
 * Web Access configuration data. This information is used to process requests on the server.  This data is also placed in a json island on each page in order for JavaScript to know key configuration data required to things like construct proper urls
 */
 interface ConfigurationContext {
-    /**
-    * MVC api configuration
-    */
-    api: ConfigurationContextApis;
-    /**
-    * Optional name of the client (e.g. TEE) hosting the page
-    */
-    clientHost: string;
     isHosted: boolean;
-    /**
-    * Current mail settings for TFS
-    */
-    mailSettings: TfsMailSettings;
-    /**
-    * Server resource paths
-    */
-    paths: ConfigurationContextPaths;
-    /**
-    * Indicates what URL format to use.
-    */
-    useCodexDomainUrls: boolean;
 }
 
 /**
-* Global context placed on each VSSF web page (through json island data) which gives enough information for core TypeScript modules/controls on the page to operate
+* Global context placed on each web page (through json island data) which gives enough information for core TypeScript modules/controls on the page to operate
 */
 export interface IPageContext {
-    /**
-    * Configuration for reporting telemetry/usage data to App Insights
-    */
-    appInsightsConfiguration: AppInsightsConfiguration;
-    /**
-    * Core javascript and css references
-    */
-    coreReferences: CoreReferencesContext;
-    /**
-    * Specifies the prefixes for CSS modules that should map to the current service. e.g. "VSS/LoaderPlugins/Css!EMS:ExtensionManagement" would map to ExtensionManagement.css under the themed content path of this service if "EMS" is in the CSSModulePrefixes list.
-    */
-    cssModulePrefixes: string[];
-    /**
-    * Diagnostic related information for the current page
-    */
-    diagnostics: DiagnosticsContext;
-    /**
-    * Feature flag states to include by default in page data (avoids AJAX lookup)
-    */
-    featureAvailability: FeatureAvailabilityContext;
     /**
     * Globalization data for the current page based on the current user's settings
     */
@@ -593,11 +309,6 @@ export interface IPageContext {
     */
     navigation: NavigationContext;
     /**
-    * The service instance type id for the VSTS service serving this page
-    */
-    serviceInstanceId: string;
-    serviceLocations: ServiceLocations;
-    /**
     * Contains global time zone configuration information (e.g. which dates DST changes)
     */
     timeZonesConfiguration: TimeZonesConfiguration;
@@ -611,29 +322,9 @@ export interface IPageContext {
     webContext: IWebContext;
 }
 
-export enum ContextHostType {
-    Unknown = 0,
-    /**
-    * The Deployment Host
-    */
-    Deployment = 1,
-    /**
-    * A legacy name for the Organization host. Use ContextHostType.Organization instead.
-    */
-    Application = 2,
-    /**
-    * The Organization host
-    */
-    Organization = 2,
-    /**
-    * The Project Collection
-    */
-    ProjectCollection = 4
-}
-
 export interface ExtendedHostContext {
     authority: string;
-    hostType: ContextHostType;
+    hostType: HostType;
     id: string;
     isAADAccount: boolean;
     name: string;
@@ -660,7 +351,6 @@ export interface UserContext {
 * Context information for all web access requests
 */
 interface IWebContext {
-    account: IHostContext;
     /**
     * Information about the Collection used in the current request (may be null)
     */
@@ -696,7 +386,7 @@ interface IExtensionHandshakeResult {
     contributionId: string;
     context: {
         extension: IExtensionContext,
-        user: IUserContext,
+        user: UserContext,
         host: IHostContext
     },
     initialConfig?: { [key: string]: any };
@@ -713,7 +403,7 @@ let hostPageContext: IPageContext | undefined;
 let extensionContext: IExtensionContext | undefined;
 let initialConfiguration: { [key: string]: any } | undefined;
 let initialContributionId: string | undefined;
-let userContext: IUserContext | undefined;
+let userContext: UserContext | undefined;
 let hostContext: IHostContext | undefined;
 let themeElement: HTMLStyleElement;
 
@@ -831,7 +521,7 @@ export function getContributionId(): string {
 /**
 * Gets information about the current user
 */
-export function getUser(): IUserContext {
+export function getUser(): UserContext {
     if (!userContext) {
         throw new Error(getWaitForReadyError("getUser"));
     }
