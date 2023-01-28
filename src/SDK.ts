@@ -338,7 +338,7 @@ export interface ContextIdentifier {
     name: string;
 }
 
-export interface UserContext {
+export interface IUserContext {
     id: string;
     limitedAccess: boolean;
     name: string;
@@ -370,7 +370,7 @@ interface IWebContext {
     /**
     * Information about the current user
     */
-    user: UserContext;
+    user: IUserContext;
 }
 
 interface IExtensionHandshakeOptions extends IExtensionInitOptions {
@@ -386,7 +386,7 @@ interface IExtensionHandshakeResult {
     contributionId: string;
     context: {
         extension: IExtensionContext,
-        user: UserContext,
+        user: IUserContext,
         host: IHostContext
     },
     initialConfig?: { [key: string]: any };
@@ -403,7 +403,7 @@ let hostPageContext: IPageContext | undefined;
 let extensionContext: IExtensionContext | undefined;
 let initialConfiguration: { [key: string]: any } | undefined;
 let initialContributionId: string | undefined;
-let userContext: UserContext | undefined;
+let userContext: IUserContext | undefined;
 let hostContext: IHostContext | undefined;
 let themeElement: HTMLStyleElement;
 
@@ -446,6 +446,7 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
         const initOptions = { ...options, sdkVersion };
 
         parentChannel.invokeRemoteMethod<IExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
+            console.log(handshakeData);
             hostPageContext = handshakeData.pageContext;
             webContext = hostPageContext.webContext;
             teamContext = webContext.team;
@@ -521,7 +522,7 @@ export function getContributionId(): string {
 /**
 * Gets information about the current user
 */
-export function getUser(): UserContext {
+export function getUser(): IUserContext {
     if (!userContext) {
         throw new Error(getWaitForReadyError("getUser"));
     }
