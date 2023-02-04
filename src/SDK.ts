@@ -3,7 +3,7 @@ import { channelManager } from "./XDM";
 /**
  * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/3.0
  */
-export const sdkVersion = 3.0;
+export const sdkVersion = 3.1;
 
 const global = window as any;
 if (global._AzureDevOpsSDKVersion) {
@@ -16,7 +16,6 @@ global._AzureDevOpsSDKVersion = sdkVersion;
  * Options for extension initialization -- passed to DevOps.init()
  */
 export interface IExtensionInitOptions {
-
     /**
      * True (the default) indicates that the content of this extension is ready to be shown/used as soon as the
      * init handshake has completed. Otherwise (loaded: false), the extension must call DevOps.notifyLoadSucceeded()
@@ -29,6 +28,37 @@ export interface IExtensionInitOptions {
      * to be applied to this extension content. Defaults to true.
      */
     applyTheme?: boolean;
+}
+
+/**
+ * Information about the current user
+ */
+export interface IUserContext {
+
+    /**
+     * Identity descriptor used to represent this user. In the format of {subject-type}.{base64-encoded-subject-id}
+     */
+    descriptor: string;
+
+    /**
+     * Unique id for the user
+     */
+    id: string;
+
+    /**
+     * Name of the user (email/login)
+     */
+    name: string;
+
+    /**
+     * The user's display name (First name / Last name)
+     */
+    displayName: string;
+
+    /**
+     * Url to the user's profile image
+     */
+    imageUrl: string;
 }
 
 /**
@@ -56,48 +86,44 @@ export enum HostType {
  * Information about the current DevOps host (organization)
  */
 export interface IHostContext {
-
     /**
      * Unique GUID for this host
      */
     id: string;
-
     /**
      * Name of the host (i.e. Organization name)
      */
     name: string;
-
     /**
      * Version of Azure DevOps used by the current host (organization)
      */
     serviceVersion: string;
-
     /**
      * DevOps host level
      */
     type: HostType;
+    /**
+     * Indicates whether on prem or not
+     */
+    isHosted: boolean;
 }
 
 /**
  * Identifier for the current extension
  */
 export interface IExtensionContext {
-
     /**
      * Full id of the extension <publisher>.<extension>
      */
     id: string;
-
     /**
      * Id of the publisher
      */
     publisherId: string;
-
     /**
      * Id of the extension (without the publisher prefix)
      */
     extensionId: string;
-
     /**
      * Version of the extension
      */
@@ -131,140 +157,6 @@ export interface GlobalizationContext {
     typeAheadDisabled: boolean;
 }
 
-/**
-* Model representing a hub in Azure DevOps pages' navigation menu
-*/
-export interface Hub {
-    ariaLabel: string;
-    builtIn: boolean;
-    groupId: string;
-    hidden: boolean;
-    icon: string;
-    id: string;
-    isSelected: boolean;
-    name: string;
-    order: any;
-    supportsXHRNavigate: boolean;
-    uri: string;
-}
-
-/**
-* Model representing a hub group in Azure DevOps pages' navigation menu
-*/
-export interface HubGroup {
-    builtIn: boolean;
-    hasHubs: boolean;
-    hidden: boolean;
-    icon: string;
-    id: string;
-    name: string;
-    nonCollapsible: boolean;
-    order: any;
-    uri: string;
-}
-
-export interface PinningPreferences {
-    pinnedHubGroupIds: string[];
-    pinnedHubs: {
-        [key: string]: string[];
-    };
-    unpinnedHubGroupIds: string[];
-    unpinnedHubs: {
-        [key: string]: string[];
-    };
-}
-
-/**
-* Context information containing the relevant hubs and hub groups for a given context
-*/
-export interface HubsContext {
-    allHubs: Hub[];
-    hubGroups: HubGroup[];
-    hubGroupsCollectionContributionId: string;
-    hubs: Hub[];
-    pinningPreferences: PinningPreferences;
-    selectedHubGroupId: string;
-    selectedHubId: string;
-    selectedNavigationIds: string[];
-}
-
-/**
-* Flags to show which tokens of the navigation context are present in the current request URL. The request url's context part are formed like http://server:port[/{collection}[/{project}[/{team}]]][/_admin]/_{controller}/{action} The tokens {collection}, {project} and {team} are navigation level tokens whereas _admin segment is a switch to show admin areas of the site.
-*/
-declare enum NavigationContextLevels {
-    None = 0,
-    /**
-    * Root level in Azure.
-    */
-    Deployment = 1,
-    /**
-    * Root level in on premises. Neither of {collection}, {project} and {team} tokens have information
-    */
-    Application = 2,
-    /**
-    * Flag to show {collection} token has information.
-    */
-    Collection = 4,
-    /**
-    * Flag to show {project} token has information.
-    */
-    Project = 8,
-    /**
-    * Flag to show {team} token has information.
-    */
-    Team = 16,
-    /**
-    * Sugar for all application levels.
-    */
-    ApplicationAll = 30,
-    /**
-    * Sugar for all levels
-    */
-    All = 31,
-}
-
-/**
-* Structure to specify current navigation context of the executing request. The navigation context content's are generally obtained from the request URL. Some context specifiers such as "Account" can be implicit and might come from current IVssServiceHost.
-*/
-interface NavigationContext {
-    /**
-    * A token to show which area the request has been targeted to. By default there are two areas "Admin" and "Api". They can be specified in the URL as _admin and _api respectively.
-    */
-    area: string;
-    /**
-    * Command name for the current request's route. Used in telemetry and reporting.
-    */
-    commandName: string;
-    /**
-    * Current action route value
-    */
-    currentAction: string;
-    /**
-    * Current controller route value
-    */
-    currentController: string;
-    /**
-    * Current parameters route value (the path after the controller and action in the url)
-    */
-    currentParameters: string;
-    /**
-    * The id of the matched route
-    */
-    routeId: string;
-    /**
-    * The templates for the matched route
-    */
-    routeTemplates: string[];
-    /**
-    * The set of route values for this request
-    */
-    routeValues: { [key: string]: string; };
-    /**
-    * Flag to show top most navigation context. For example the URL http://server:port/collection/project/_controller/action sets the Project bit while the URL http://server:port/collection/project/_admin/_controller/action sets also sets the area property to Admin.
-    */
-    topMostLevel: NavigationContextLevels;
-}
-
 interface DaylightSavingsAdjustmentEntry {
     /**
     * Millisecond adjustment from UTC
@@ -280,17 +172,6 @@ interface TimeZonesConfiguration {
     daylightSavingsAdjustments: DaylightSavingsAdjustmentEntry[];
 }
 
-interface MailSettings {
-    enabled: boolean;
-}
-
-/**
-* Web Access configuration data. This information is used to process requests on the server.  This data is also placed in a json island on each page in order for JavaScript to know key configuration data required to things like construct proper urls
-*/
-interface ConfigurationContext {
-    isHosted: boolean;
-}
-
 /**
 * Global context placed on each web page (through json island data) which gives enough information for core TypeScript modules/controls on the page to operate
 */
@@ -300,37 +181,13 @@ export interface IPageContext {
     */
     globalization: GlobalizationContext;
     /**
-    * Cached set of hubs and hub groups for the given request/navigation-context
-    */
-    hubsContext: HubsContext;
-
-    /**
-    * Current navigation context.
-    */
-    navigation: NavigationContext;
-    /**
     * Contains global time zone configuration information (e.g. which dates DST changes)
     */
     timeZonesConfiguration: TimeZonesConfiguration;
     /**
-    * Web Access configuration
-    */
-    webAccessConfiguration: ConfigurationContext;
-    /**
     * The web context information for the given page request
     */
     webContext: IWebContext;
-}
-
-export interface ExtendedHostContext {
-    authority: string;
-    hostType: HostType;
-    id: string;
-    isAADAccount: boolean;
-    name: string;
-    relativeUri: string;
-    scheme: string;
-    uri: string;
 }
 
 export interface ContextIdentifier {
@@ -338,27 +195,10 @@ export interface ContextIdentifier {
     name: string;
 }
 
-export interface IUserContext {
-    id: string;
-    limitedAccess: boolean;
-    name: string;
-    subjectId: string;
-    subjectType: string;
-    uniqueName: string;
-}
-
 /**
 * Context information for all web access requests
 */
 interface IWebContext {
-    /**
-    * Information about the Collection used in the current request (may be null)
-    */
-    collection: IHostContext;
-    /**
-    * Information about the current request context's host
-    */
-    host: ExtendedHostContext;
     /**
     * Information about the project used in the current request (may be null)
     */
@@ -367,14 +207,9 @@ interface IWebContext {
     * Information about the team used in the current request (may be null)
     */
     team: ITeamContext;
-    /**
-    * Information about the current user
-    */
-    user: IUserContext;
 }
 
 interface IExtensionHandshakeOptions extends IExtensionInitOptions {
-
     /**
      * Version number of this SDK
      */
@@ -446,10 +281,9 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
         const initOptions = { ...options, sdkVersion };
 
         parentChannel.invokeRemoteMethod<IExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
-            console.log(handshakeData);
-            hostPageContext = handshakeData.pageContext;
-            webContext = hostPageContext.webContext;
-            teamContext = webContext.team;
+            hostPageContext = handshakeData?.pageContext;
+            webContext = hostPageContext?.webContext;
+            teamContext = webContext?.team;
 
             initialConfiguration = handshakeData.initialConfig || {};
             initialContributionId = handshakeData.contributionId;
