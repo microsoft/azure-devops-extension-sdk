@@ -103,7 +103,7 @@ export interface IHostContext {
      */
     type: HostType;
     /**
-     * Indicates whether on prem or not
+     * Distinguish between Azure DevOps Services (true) and Azure DevOps Server (false)
      */
     isHosted: boolean;
 }
@@ -173,7 +173,7 @@ interface TimeZonesConfiguration {
 }
 
 /**
-* Global context placed on each web page (through json island data) which gives enough information for core TypeScript modules/controls on the page to operate
+* Global context placed on each web page
 */
 export interface IPageContext {
     /**
