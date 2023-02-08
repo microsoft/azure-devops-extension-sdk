@@ -1,11 +1,11 @@
 {
   "name": "azure-devops-extension-sdk-esm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Azure DevOps web extension JavaScript library.",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/azure-devops-extension-sdk.git"
+    "url": "https://github.com/szimeth-jozef/azure-devops-extension-sdk.git"
   },
   "scripts": {
     "build": "rollup --config rollup.config.js"
