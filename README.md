@@ -20,8 +20,8 @@ See the [Develop a web extension for Azure DevOps](https://docs.microsoft.com/en
 
 ## Import the SDK within your extension project
 
-1. Add `azure-devops-extension-sdk-esm` to the list of dependencies in your package.json
-2. Add `import * as SDK from "azure-devops-extension-sdk-esm"` to your TypeScript code
+1. Add `azure-devops-extension-sdk` to the list of dependencies in your package.json
+2. Add `import * as SDK from "azure-devops-extension-sdk"` to your TypeScript code
 
 ## Initialize the SDK
 
@@ -33,7 +33,7 @@ When you have rendered your extension content, call `SDK.init()`. Your extension
 Example:
 
 ```typescript
-import * as SDK from "azure-devops-extension-sdk-esm";
+import * as SDK from "azure-devops-extension-sdk";
 
 SDK.init();
 ```
