@@ -3,7 +3,7 @@ import { channelManager } from "./XDM";
 /**
  * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/3.0
  */
-export const sdkVersion = 3.0;
+export const sdkVersion = 3.1;
 
 const global = window as any;
 if (global._AzureDevOpsSDKVersion) {
@@ -16,7 +16,6 @@ global._AzureDevOpsSDKVersion = sdkVersion;
  * Options for extension initialization -- passed to DevOps.init()
  */
 export interface IExtensionInitOptions {
-
     /**
      * True (the default) indicates that the content of this extension is ready to be shown/used as soon as the
      * init handshake has completed. Otherwise (loaded: false), the extension must call DevOps.notifyLoadSucceeded()
@@ -66,7 +65,7 @@ export interface IUserContext {
  * DevOps host level
  */
 export enum HostType {
-
+    Unknown = 0,
     /**
      * The Deployment host
      */
@@ -87,56 +86,130 @@ export enum HostType {
  * Information about the current DevOps host (organization)
  */
 export interface IHostContext {
-
     /**
      * Unique GUID for this host
      */
     id: string;
-
     /**
      * Name of the host (i.e. Organization name)
      */
     name: string;
-
     /**
      * Version of Azure DevOps used by the current host (organization)
      */
     serviceVersion: string;
-
     /**
      * DevOps host level
      */
     type: HostType;
+    /**
+     * Distinguish between Azure DevOps Services (true) and Azure DevOps Server (false)
+     */
+    isHosted: boolean;
 }
 
 /**
  * Identifier for the current extension
  */
 export interface IExtensionContext {
-
     /**
      * Full id of the extension <publisher>.<extension>
      */
     id: string;
-
     /**
      * Id of the publisher
      */
     publisherId: string;
-
     /**
      * Id of the extension (without the publisher prefix)
      */
     extensionId: string;
-
     /**
      * Version of the extension
      */
     version: string;
 }
 
-interface IExtensionHandshakeOptions extends IExtensionInitOptions {
+/**
+ * Information about the current DevOps team
+ */
+export interface ITeamContext {
+    /**
+     * Unique GUID for this team
+     */
+    id: string;
 
+    /**
+     * Name of team
+     */
+    name: string;
+}
+
+export interface GlobalizationContext {
+    culture: string;
+    /**
+    * Gets the explicitly-set theme, or the empty string if a theme was not explicitly set. An explicitly-set theme is set either in the query string (?theme=[themename]) or in the user's profile. However, the default theme set in the profile is not considered to be an explicitly-set theme.
+    */
+    explicitTheme: string;
+    theme: string;
+    timeZoneId: string;
+    timezoneOffset: number;
+    typeAheadDisabled: boolean;
+}
+
+interface DaylightSavingsAdjustmentEntry {
+    /**
+    * Millisecond adjustment from UTC
+    */
+    offset: number;
+    /**
+    * Date that the offset adjustment starts
+    */
+    start: Date;
+}
+
+interface TimeZonesConfiguration {
+    daylightSavingsAdjustments: DaylightSavingsAdjustmentEntry[];
+}
+
+/**
+* Global context placed on each web page
+*/
+export interface IPageContext {
+    /**
+    * Globalization data for the current page based on the current user's settings
+    */
+    globalization: GlobalizationContext;
+    /**
+    * Contains global time zone configuration information (e.g. which dates DST changes)
+    */
+    timeZonesConfiguration: TimeZonesConfiguration;
+    /**
+    * The web context information for the given page request
+    */
+    webContext: IWebContext;
+}
+
+export interface ContextIdentifier {
+    id: string;
+    name: string;
+}
+
+/**
+* Context information for all web access requests
+*/
+interface IWebContext {
+    /**
+    * Information about the project used in the current request (may be null)
+    */
+    project: ContextIdentifier;
+    /**
+    * Information about the team used in the current request (may be null)
+    */
+    team: ITeamContext;
+}
+
+interface IExtensionHandshakeOptions extends IExtensionInitOptions {
     /**
      * Version number of this SDK
      */
@@ -144,6 +217,7 @@ interface IExtensionHandshakeOptions extends IExtensionInitOptions {
 }
 
 interface IExtensionHandshakeResult {
+    pageContext: IPageContext;
     contributionId: string;
     context: {
         extension: IExtensionContext,
@@ -151,13 +225,16 @@ interface IExtensionHandshakeResult {
         host: IHostContext
     },
     initialConfig?: { [key: string]: any };
-    themeData?: { [ key: string]: string };
+    themeData?: { [key: string]: string };
 }
 
 const hostControlId = "DevOps.HostControl";
 const serviceManagerId = "DevOps.ServiceManager";
 const parentChannel = channelManager.addChannel(window.parent);
 
+let teamContext: ITeamContext | undefined;
+let webContext: IWebContext | undefined;;
+let hostPageContext: IPageContext | undefined;
 let extensionContext: IExtensionContext | undefined;
 let initialConfiguration: { [key: string]: any } | undefined;
 let initialContributionId: string | undefined;
@@ -204,6 +281,9 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
         const initOptions = { ...options, sdkVersion };
 
         parentChannel.invokeRemoteMethod<IExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
+            hostPageContext = handshakeData?.pageContext;
+            webContext = hostPageContext?.webContext;
+            teamContext = webContext?.team;
 
             initialConfiguration = handshakeData.initialConfig || {};
             initialContributionId = handshakeData.contributionId;
@@ -304,6 +384,36 @@ export function getExtensionContext(): IExtensionContext {
 }
 
 /**
+* Gets information about the team that the page is targeting
+*/
+export function getTeamContext(): ITeamContext {
+    if (!teamContext) {
+        throw new Error(getWaitForReadyError("getTeamContext"));
+    }
+    return teamContext;
+}
+
+/**
+* Get the context about the host page
+*/
+export function getPageContext(): IPageContext {
+    if (!hostPageContext) {
+        throw new Error(getWaitForReadyError("getPageContext"));
+    }
+    return hostPageContext;
+}
+
+/**
+* Get the context about the web
+*/
+export function getWebContext(): IWebContext {
+    if (!webContext) {
+        throw new Error(getWaitForReadyError("getWebContext"));
+    }
+    return webContext;
+}
+
+/**
 * Get the contribution with the given contribution id. The returned contribution has a method to get a registered object within that contribution.
 *
 * @param contributionId - Id of the contribution to get
@@ -358,7 +468,6 @@ export function resize(width?: number, height?: number): void {
     if (body) {
         const newWidth = typeof width === "number" ? width : (body ? body.scrollWidth : undefined);
         const newHeight = typeof height === "number" ? height : (body ? body.scrollHeight : undefined);
-        
         parentChannel.invokeRemoteMethod("resize", hostControlId, [newWidth, newHeight]);
     }
 }
