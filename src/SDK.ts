@@ -281,9 +281,9 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
         const initOptions = { ...options, sdkVersion };
 
         parentChannel.invokeRemoteMethod<IExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
-            hostPageContext = handshakeData?.pageContext;
-            webContext = hostPageContext?.webContext;
-            teamContext = webContext?.team;
+            hostPageContext = handshakeData.pageContext;
+            webContext = handshakeData ? hostPageContext.webContext : undefined;
+            teamContext = webContext ? webContext.team : undefined;
 
             initialConfiguration = handshakeData.initialConfig || {};
             initialContributionId = handshakeData.contributionId;
