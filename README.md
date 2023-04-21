@@ -1,5 +1,8 @@
 # Azure DevOps Web Extension SDK
 
+## Release Notes
+Version `3.*.*` provides additional context information, specifically page, web and team context. It also resolves NPM vulnerabilities associated with old packages.
+
 ## Overview
 
 Client SDK for developing [Azure DevOps extensions](https://docs.microsoft.com/en-us/azure/devops/extend/overview).
