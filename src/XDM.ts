@@ -1,6 +1,3 @@
-import "es6-promise/auto";
-import "es6-object-assign/auto";
-
 /**
 * Interface for a single XDM channel
 */
@@ -130,6 +127,7 @@ function newFingerprint() {
  */
 function getAllPropertyNames(obj: any) {
     const properties: { [key: string]: true } = {};
+
     while (obj && obj !== Object.prototype) {
         const ownPropertyNames = Object.getOwnPropertyNames(obj);
         for (const name of ownPropertyNames) {
@@ -176,7 +174,7 @@ export class XDMObjectRegistry implements IXDMObjectRegistry {
     * @param contextData - Optional context data to pass to a registered object's factory method
     */
     public getInstance<T>(instanceId: string, contextData?: Object): T | undefined {
-        var instance = this.objects[instanceId];
+        const instance = this.objects[instanceId];
         if (!instance) {
             return undefined;
         }
@@ -282,7 +280,7 @@ export class XDMChannel implements IXDMChannel {
             return;
         }
 
-        var method: Function = registeredInstance[rpcMessage.methodName];
+        const method: Function = registeredInstance[rpcMessage.methodName];
         if (typeof method !== "function") {
             this.error(rpcMessage, new Error("RPC method not found: " + rpcMessage.methodName));
             return;
@@ -291,12 +289,12 @@ export class XDMChannel implements IXDMChannel {
         try {
             // Call specified method.  Add nested success and error call backs with closure
             // so we can post back a response as a result or error as appropriate
-            var methodArgs = [];
+            let methodArgs: any[] = [];
             if (rpcMessage.params) {
                 methodArgs = <any[]>this._customDeserializeObject(rpcMessage.params, {});
             }
 
-            var result = method.apply(registeredInstance, methodArgs);
+            const result = method.apply(registeredInstance, methodArgs);
             if (result && result.then && typeof result.then === "function") {
                 result.then((asyncResult: any) => {
                     this._success(rpcMessage, asyncResult, rpcMessage.handshakeToken);
@@ -310,7 +308,7 @@ export class XDMChannel implements IXDMChannel {
         }
         catch (exception) {
             // send back as error if an exception is thrown
-            this.error(rpcMessage, exception);
+            this.error(rpcMessage, exception as Error);
         }
     }
 
@@ -322,13 +320,13 @@ export class XDMChannel implements IXDMChannel {
         }
 
         // Look in the channel registry first
-        var registeredObject = this.registry.getInstance(instanceId, instanceContext);
+        let registeredObject = this.registry.getInstance(instanceId, instanceContext);
         if (!registeredObject) {
             // Look in the global registry as a fallback
             registeredObject = globalObjectRegistry.getInstance(instanceId, instanceContext);
         }
 
-        return registeredObject;
+        return registeredObject as Object;
     }
 
     /**
@@ -433,7 +431,7 @@ export class XDMChannel implements IXDMChannel {
             return undefined;
         }
 
-        var returnValue: any;
+        let returnValue: any;
 
         let parentObjects: { originalObjects: any[]; newObjects: any[]; };
         if (!prevParentObjects) {
@@ -448,8 +446,8 @@ export class XDMChannel implements IXDMChannel {
 
         parentObjects.originalObjects.push(obj);
 
-        var serializeMember = (parentObject: any, newObject: any, key: any) => {
-            var item;
+        const serializeMember = (parentObject: any, newObject: any, key: any) => {
+            let item;
 
             try {
                 item = parentObject[key];
@@ -458,19 +456,19 @@ export class XDMChannel implements IXDMChannel {
                 // Cannot access this property. Skip its serialization.
             }
 
-            var itemType = typeof item;
+            const itemType = typeof item;
             if (itemType === "undefined") {
                 return;
             }
 
             // Check for a circular reference by looking at parent objects
-            var parentItemIndex = -1;
+            let parentItemIndex = -1;
             if (itemType === "object") {
                 parentItemIndex = parentObjects.originalObjects.indexOf(item);
             }
             if (parentItemIndex >= 0) {
                 // Circular reference found. Add reference to parent
-                var parentItem = parentObjects.newObjects[parentItemIndex];
+                const parentItem = parentObjects.newObjects[parentItemIndex];
                 if (!parentItem.__circularReferenceId) {
                     parentItem.__circularReferenceId = nextCircularRefId++;
                 }
@@ -480,7 +478,7 @@ export class XDMChannel implements IXDMChannel {
             }
             else {
                 if (itemType === "function") {
-                    var proxyFunctionId = this.nextProxyId++;
+                    const proxyFunctionId = this.nextProxyId++;
                     newObject[key] = {
                         __proxyFunctionId: this._registerProxyFunction(item, obj),
                         _channelId: this.channelId
@@ -509,7 +507,7 @@ export class XDMChannel implements IXDMChannel {
             returnValue = [];
             parentObjects.newObjects.push(returnValue);
 
-            for (var i = 0, l = obj.length; i < l; i++) {
+            for (let i = 0, l = obj.length; i < l; i++) {
                 serializeMember(obj, returnValue, i);
             }
         }
@@ -524,7 +522,7 @@ export class XDMChannel implements IXDMChannel {
                 // We may not be able to access the iterator of this object. Skip its serialization.
             }
 
-            for (var key in keys) {
+            for (const key in keys) {
                 // Don't serialize properties that start with an underscore.
                 if ((key && key[0] !== "_") || (settings && settings.includeUnderscoreProperties)) {
                     serializeMember(obj, returnValue, key);
@@ -539,7 +537,7 @@ export class XDMChannel implements IXDMChannel {
     }
 
     private _registerProxyFunction(func: Function, context: any): number {
-        var proxyFunctionId = this.nextProxyId++;
+        const proxyFunctionId = this.nextProxyId++;
         this.proxyFunctions["proxy" + proxyFunctionId] = function () {
             return func.apply(context, Array.prototype.slice.call(arguments, 0));
         };
@@ -547,15 +545,15 @@ export class XDMChannel implements IXDMChannel {
     }
 
     private _customDeserializeObject(obj: Object, circularRefs: { [key: number]: Object }): any {
-        var that = this;
+        const that = this;
 
         if (!obj) {
             return null;
         }
 
-        var deserializeMember = (parentObject: any, key: any) => {
-            var item = parentObject[key];
-            var itemType = typeof item;
+        const deserializeMember = (parentObject: any, key: any) => {
+            const item = parentObject[key];
+            const itemType = typeof item;
 
             if (key === "__circularReferenceId" && itemType === 'number') {
                 circularRefs[item] = parentObject;
@@ -581,12 +579,12 @@ export class XDMChannel implements IXDMChannel {
         };
 
         if (obj instanceof Array) {
-            for (var i = 0, l = obj.length; i < l; i++) {
+            for (let i = 0, l = obj.length; i < l; i++) {
                 deserializeMember(obj, i);
             }
         }
         else if (typeof obj === "object") {
-            for (var key in obj) {
+            for (const key in obj) {
                 deserializeMember(obj, key);
             }
         }

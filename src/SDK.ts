@@ -431,7 +431,7 @@ export async function getService<T>(contributionId: string): Promise<T> {
 * @param instance - Either: (1) an object instance, or (2) a function that takes optional context data and returns an object instance.
 */
 export function register<T = any>(instanceId: string, instance: T): void {
-    parentChannel.getObjectRegistry().register(instanceId, instance);
+    parentChannel.getObjectRegistry().register(instanceId, instance as Object);
 }
 
 /**
@@ -483,7 +483,7 @@ export function applyTheme(themeData: { [varName: string]: string }): void {
         document.head!.appendChild(themeElement);
     }
 
-    const cssVariables = [];
+    const cssVariables: string[] = [];
     if (themeData) {
         for (const varName in themeData) {
             cssVariables.push("--" + varName + ": " + themeData[varName]);
