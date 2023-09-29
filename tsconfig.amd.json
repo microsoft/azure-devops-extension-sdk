@@ -2,6 +2,6 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "declaration": true,
-        "declarationDir": "dist/amd"
+        "declarationDir": "bin/amd"
     }
 }

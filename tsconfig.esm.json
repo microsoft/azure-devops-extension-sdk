@@ -4,6 +4,6 @@
         "target": "ES2022",
         "module": "ESNext",
         "declaration": true,
-        "declarationDir": "dist/esm"
+        "declarationDir": "bin/esm"
     }
 }
