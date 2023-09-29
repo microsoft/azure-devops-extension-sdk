@@ -9,7 +9,7 @@ import copy from "rollup-plugin-copy" // Copies files and folders
 
 export default [
     // AMD Bundle: Backward Compatibility
-    // console.log("Building AMD Bundle. Also, cleaning bin folder and copying License and package.json to the bin folder (root of the package)."),
+    // Also, cleaning bin folder first and copying License and package.json to the bin folder (root of the package).
     {
         input: "src/SDK.ts",
         external: ["tslib"], // Exclude tslib from the final bundle. It will be imported from external source at runtime.
