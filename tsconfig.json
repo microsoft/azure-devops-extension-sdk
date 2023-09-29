@@ -1,11 +1,8 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "declaration": true,
         "rootDir": "src/",
-        "outDir": "bin/",
         "experimentalDecorators": true,
-        "module": "amd",
         "moduleResolution": "node",
         "noImplicitAny": true,
         "noImplicitThis": true,
