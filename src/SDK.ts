@@ -3,7 +3,7 @@ import { channelManager } from "./XDM";
 /**
  * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/3.0
  */
-export const sdkVersion = 3.1;
+export const sdkVersion = 4.0;
 
 const global = window as any;
 if (global._AzureDevOpsSDKVersion) {
