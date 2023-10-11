@@ -14,20 +14,46 @@ export default [
         input: "src/SDK.ts",
         external: ["tslib"], // Exclude tslib from the final bundle. It will be imported from external source at runtime.
         output: {
-            dir: "bin/amd",
+            dir: "bin",
             format: "amd",
             sourcemap: true,
-            preserveModules: true
+            preserveModules: true,
         },
         plugins: [
             del({ targets: "bin/*" }),
-            typescript({ tsconfig: "./tsconfig.amd.json" }),
+            typescript({ tsconfig: "./tsconfig.amd.json" }), // Mentioning tsconfig.amd.json file (where declaration is set to true), so d.ts files are generated.
             copy({
                 targets: [
                     { src: "package.json", dest: "bin" },
-                    { src: "LICENSE", dest: "bin" }
+                    { src: "LICENSE", dest: "bin" },
+                    { src: "README.md", dest: "bin" },
+                    { src: "SECURITY.md", dest: "bin" }
                 ]
             }),        
+        ]
+    },
+    // AMD Bundle: Minified - Generating SDK.min.js
+    {
+        input: "src/SDK.ts",
+        output: {
+            file: "bin/SDK.min.js",
+            format: "amd",
+        },
+        plugins: [
+            typescript(),
+            terser()
+        ]
+    },
+    // AMD Bundle: Minified - Generating XDM.min.js
+    {
+        input: "src/XDM.ts",
+        output: {
+            file: "bin/XDM.min.js",
+            format: "amd",
+        },
+        plugins: [
+            typescript(),
+            terser()
         ]
     },
     // ESM Bundle
@@ -42,30 +68,6 @@ export default [
         plugins: [
             del({ targets: "bin/esm/*" }),
             typescript({ tsconfig: "./tsconfig.esm.json" }),
-        ]
-    },
-    // AMD Bundle: Minified - Generating SDK.min.js
-    {
-        input: "src/SDK.ts",
-        output: {
-            file: "bin/amd/SDK.min.js",
-            format: "amd",
-        },
-        plugins: [
-            typescript({ tsconfig: "./tsconfig.amd.json" }),
-            terser()
-        ]
-    },
-    // AMD Bundle: Minified - Generating XDM.min.js
-    {
-        input: "src/XDM.ts",
-        output: {
-            file: "bin/amd/XDM.min.js",
-            format: "amd",
-        },
-        plugins: [
-            typescript({ tsconfig: "./tsconfig.amd.json" }),
-            terser()
         ]
     },
     // ESM Bundle: Minified - Generating SDK.min.js
