@@ -7,6 +7,10 @@
     "type": "git",
     "url": "https://github.com/Microsoft/azure-devops-extension-sdk.git"
   },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },
