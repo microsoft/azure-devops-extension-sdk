@@ -217,10 +217,10 @@ interface IExtensionHandshakeOptions extends IExtensionInitOptions {
 }
 
 interface IExtensionHandshakeResult {
-    pageContext: IPageContext;
     contributionId: string;
     context: {
         extension: IExtensionContext,
+        pageContext: IPageContext,
         user: IUserContext,
         host: IHostContext
     },
@@ -281,14 +281,14 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
         const initOptions = { ...options, sdkVersion };
 
         parentChannel.invokeRemoteMethod<IExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
-            hostPageContext = handshakeData.pageContext;
+            const context = handshakeData.context;
+            hostPageContext = context.pageContext;
             webContext = hostPageContext ? hostPageContext.webContext : undefined;
             teamContext = webContext ? webContext.team : undefined;
 
             initialConfiguration = handshakeData.initialConfig || {};
             initialContributionId = handshakeData.contributionId;
 
-            const context = handshakeData.context;
             extensionContext = context.extension;
             userContext = context.user;
             hostContext = context.host;
