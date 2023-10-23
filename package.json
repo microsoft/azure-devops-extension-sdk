@@ -25,9 +25,8 @@
     "url": "https://aka.ms/AAk5pcm"
   },
   "homepage": "https://docs.microsoft.com/en-us/azure/devops/integrate",
-  "main": "./bin/SDK.js",
-  "module": "./bin/esm/SDK.js",
-  "typings": "./bin/esm/SDK.d.ts",
+  "main": "SDK.js",
+  "types": "SDK.d.ts",
   "files": [
     "bin/**/*"
   ],
