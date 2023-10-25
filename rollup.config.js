@@ -5,7 +5,6 @@
 import typescript from "@rollup/plugin-typescript" // Compiles TypeScript to JavaScript
 import del from "rollup-plugin-delete" // Deletes files and folders
 import terser from "@rollup/plugin-terser" // Minifies JavaScript
-import copy from "rollup-plugin-copy" // Copies files and folders
 
 export default [
     // AMD Bundle: Backward Compatibility
@@ -22,14 +21,6 @@ export default [
         plugins: [
             del({ targets: "bin/*" }),
             typescript({ tsconfig: "./tsconfig.amd.json" }), // Mentioning tsconfig.amd.json file (where declaration is set to true), so d.ts files are generated.
-            copy({
-                targets: [
-                    { src: "package.json", dest: "bin" },
-                    { src: "LICENSE", dest: "bin" },
-                    { src: "README.md", dest: "bin" },
-                    { src: "SECURITY.md", dest: "bin" }
-                ]
-            }),        
         ]
     },
     // AMD Bundle: Minified - Generating SDK.min.js
