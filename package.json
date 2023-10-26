@@ -1,18 +1,16 @@
 {
   "name": "azure-devops-extension-sdk",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Azure DevOps web extension JavaScript library.",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/Microsoft/azure-devops-extension-sdk.git"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=10.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
   },
   "keywords": [
     "extensions",
@@ -26,10 +24,11 @@
   },
   "homepage": "https://docs.microsoft.com/en-us/azure/devops/integrate",
   "main": "SDK.js",
-  "types": "SDK.d.ts",
-  "files": [
-    "bin/**/*"
-  ],
+  "exports": {
+    "types": "SDK.d.ts",
+    "import": "./esm/SDK.min.js",
+    "require": "SDK.min.js"
+  },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.4",
