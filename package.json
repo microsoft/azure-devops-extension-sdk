@@ -27,9 +27,10 @@
   "homepage": "https://docs.microsoft.com/en-us/azure/devops/integrate",
   "main": "SDK.js",
   "types": "SDK.d.ts",
-  "files": [
-    "bin/**/*"
-  ],
+  "exports": {
+    "import": "./esm/SDK.min.js",
+    "require": "./SDK.min.js"
+  },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.4",
