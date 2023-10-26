@@ -1,17 +1,16 @@
 {
   "name": "azure-devops-extension-sdk",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Azure DevOps web extension JavaScript library.",
   "repository": {
     "type": "git",
     "url": "https://github.com/Microsoft/azure-devops-extension-sdk.git"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=10.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
   },
   "keywords": [
     "extensions",
