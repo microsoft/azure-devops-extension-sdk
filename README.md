@@ -1,5 +1,45 @@
 # Azure DevOps Web Extension SDK
 
+## Release Notes
+New major version, v`4.*.*` provides multiple module support to the SDK. Details:
+
+### New Features
+
+- **ES Module Support**: We are thrilled to announce that our project now supports ES (ECMAScript) modules in addition to the existing AMD (Asynchronous Module Definition) modules. You can now import our modules using the ES module syntax, which provides the following benefits:
+
+  - **Static Imports**: ES modules allow for static imports, which means the imports are resolved at compile-time rather than at runtime. This can lead to performance improvements and better tooling support.
+
+  - **Tree Shaking**: ES modules support tree shaking, a process which eliminates unused exports in your final bundle, reducing the size of your application and improving load times.
+
+  - **Build-time Error Checking**: With ES modules, some errors can be caught at build time rather than at runtime, leading to more robust code.
+
+### Enhancements
+
+- **Backward Compatibility for AMD Modules**: We understand the importance of backward compatibility. Therefore, we have ensured that our existing support for AMD modules remains intact. If your project is using AMD modules, you can continue to use them as before without any changes.
+
+### How to Use
+
+If you're using AMD modules, you can continue to import our modules using the `require` function:
+
+```javascript
+require(['module-name'], function(module) {
+  // Use the module here
+});
+```
+
+For ES modules, you can import our modules using the `import` statement:
+
+```javascript
+import module from 'module-name';
+// Use the module here
+```
+
+We are committed to providing a seamless experience for all our users, regardless of the module system they are using. We hope you find these updates beneficial and as always, we welcome your feedback and questions.
+
+## Get started with a new extension
+
+See the [Develop a web extension for Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/extend/get-started/node?view=vsts) documentation for instructions on getting started with a new extension. You can also refer to the [azure-devops-extension-sample](https://github.com/Microsoft/azure-devops-extension-sample) repository as a working reference.
+
 ## Overview
 
 Client SDK for developing [Azure DevOps extensions](https://docs.microsoft.com/en-us/azure/devops/extend/overview).
