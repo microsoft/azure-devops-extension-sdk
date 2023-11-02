@@ -22,7 +22,7 @@ require(['azure-devops-extension-sdk'], function(SDK) {
 For ES modules, you can import our modules using the `import` statement:
 
 ```javascript
-import SDK from 'azure-devops-extension-sdk';
+import * as SDK from 'azure-devops-extension-sdk';
 // Use the module here
 ```
 
