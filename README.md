@@ -3,26 +3,18 @@
 ## Release Notes
 New major version, v`4.*.*` provides multiple module support to the SDK. Details:
 
-### New Features
+### Details
 
-- **ES Module Support**: We are thrilled to announce that our project now supports ES (ECMAScript) modules in addition to the existing AMD (Asynchronous Module Definition) modules. You can now import our modules using the ES module syntax, which provides the following benefits:
+- **ES Module Support**: SDK now supports ES (ECMAScript) modules in addition to the existing AMD (Asynchronous Module Definition) modules. You can now import SDK using the ES module syntax, which provides performance improvements and reduces the application size.
 
-  - **Static Imports**: ES modules allow for static imports, which means the imports are resolved at compile-time rather than at runtime. This can lead to performance improvements and better tooling support.
-
-  - **Tree Shaking**: ES modules support tree shaking, a process which eliminates unused exports in your final bundle, reducing the size of your application and improving load times.
-
-  - **Build-time Error Checking**: With ES modules, some errors can be caught at build time rather than at runtime, leading to more robust code.
-
-### Enhancements
-
-- **Backward Compatibility for AMD Modules**: We understand the importance of backward compatibility. Therefore, we have ensured that our existing support for AMD modules remains intact. If your project is using AMD modules, you can continue to use them as before without any changes.
+- **Backward Compatibility for AMD Modules**: Existing support for AMD modules remains intact. If your project is using AMD modules, you can continue to use them as before without any changes.
 
 ### How to Use
 
-If you're using AMD modules, you can continue to import our modules using the `require` function:
+If you're using AMD modules, you can continue to import SDK using the `require` function:
 
 ```javascript
-require(['module-name'], function(module) {
+require(['azure-devops-extension-sdk'], function(SDK) {
   // Use the module here
 });
 ```
@@ -30,11 +22,9 @@ require(['module-name'], function(module) {
 For ES modules, you can import our modules using the `import` statement:
 
 ```javascript
-import module from 'module-name';
+import SDK from 'azure-devops-extension-sdk';
 // Use the module here
 ```
-
-We are committed to providing a seamless experience for all our users, regardless of the module system they are using. We hope you find these updates beneficial and as always, we welcome your feedback and questions.
 
 ## Get started with a new extension
 
