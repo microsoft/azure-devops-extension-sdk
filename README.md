@@ -1,5 +1,35 @@
 # Azure DevOps Web Extension SDK
 
+## Release Notes
+New major version, v`4.*.*` provides multiple module support to the SDK.
+
+### Details
+
+- **ES Module Support**: SDK now supports ES (ECMAScript) modules in addition to the existing AMD (Asynchronous Module Definition) modules. You can now import SDK using the ES module syntax, which provides performance improvements and reduces the application size.
+
+- **Backward Compatibility for AMD Modules**: Existing support for AMD modules remains intact. If your project is using AMD modules, you can continue to use them as before without any changes.
+
+### How to Use
+
+If you're using AMD modules, you can continue to import SDK using the `require` function:
+
+```javascript
+require(['azure-devops-extension-sdk'], function(SDK) {
+  // Use the module here
+});
+```
+
+For ES modules, you can import our modules using the `import` statement:
+
+```javascript
+import * as SDK from 'azure-devops-extension-sdk';
+// Use the module here
+```
+
+## Get started with a new extension
+
+See the [Develop a web extension for Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/extend/get-started/node?view=vsts) documentation for instructions on getting started with a new extension. You can also refer to the [azure-devops-extension-sample](https://github.com/Microsoft/azure-devops-extension-sample) repository as a working reference.
+
 ## Overview
 
 Client SDK for developing [Azure DevOps extensions](https://docs.microsoft.com/en-us/azure/devops/extend/overview).
