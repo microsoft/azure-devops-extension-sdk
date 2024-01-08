@@ -1,7 +1,8 @@
 # Azure DevOps Web Extension SDK
 
 ## Release Notes
-New major version, v`4.*.*` provides multiple module support to the SDK.
+New major version v`4.*.*` provides multiple module support to the SDK.
+New minor version v`4.1.*` adds support for widget and widget configuration contributions.
 
 ### Details
 
