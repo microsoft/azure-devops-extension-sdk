@@ -508,6 +508,7 @@ export interface SaveStatus {
      */
     isValid: boolean;
 }
+
 /**
  * Size of lightbox to draw widget in
  */
@@ -521,6 +522,7 @@ export interface Size {
      */
     height: number;
 }
+
 /**
  * versioning for an artifact as described at: http://semver.org/, of the form major.minor.patch.
  */
@@ -538,6 +540,7 @@ export interface SemanticVersion {
      */
     patch: number;
 }
+
 /**
  * settings of the widget that encapsulate their serialized data and version support.
  */
@@ -552,13 +555,15 @@ export interface CustomSettings {
      */
     version?: SemanticVersion;
 }
+
 /**
  * data contract required for the widget to function in a webaccess area or page.
  */
 export enum WidgetScope {
     Collection_User = 0,
-    Project_Team = 1,
+    Project_Team = 1
 }
+
 export interface WidgetSize {
     /**
      * The Width of the widget, expressed in dashboard grid columns.
@@ -569,6 +574,7 @@ export interface WidgetSize {
      */
     rowSpan: number;
 }
+
 /**
  * Lightbox configuration
  */
@@ -586,6 +592,7 @@ export interface LightboxOptions {
      */
     width: number;
 }
+
 /**
  * A description of widget state, satisfying requirements for rendering a widget (Does not contain grid centric information, or contribution metadata).
  */
@@ -607,6 +614,7 @@ export interface WidgetSettings {
      */
     lightboxOptions?: LightboxOptions;
 }
+
 /**
  * Used to differentiate between widget status helpers
  */
@@ -622,8 +630,9 @@ export enum WidgetStatusType {
     /**
      * The widget needs to be configured
      */
-    Unconfigured = 2,
+    Unconfigured = 2
 }
+
 /**
  * The object encapsulating the result for an IWidget/IConfigurableWidget method call. This object is created using the WidgetStatusHelper library.
  */
@@ -657,11 +666,7 @@ export class WidgetStatusHelper {
      * allowed to set this to true. For any 3rd party widgets passing this value as true, it will be ignored.
      * @returns promise encapsulating the status of the widget loading operations.
      */
-    static Failure(
-        message: string,
-        isUserVisible?: boolean,
-        isRichText?: boolean
-    ): Promise<WidgetStatus> {
+    static Failure(message: string, isUserVisible?: boolean, isRichText?: boolean): Promise<WidgetStatus> {
         isUserVisible = isUserVisible === undefined ? true : isUserVisible;
         isRichText = isRichText === undefined ? false : isRichText;
         return Promise.reject({ message, isRichText, isUserVisible });
@@ -704,6 +709,7 @@ export interface EventArgs<T> {
      */
     data: T;
 }
+
 /**
  * Interface for the object passed to the widget configuration to communicate with its host.
  */
@@ -717,6 +723,7 @@ export interface IWidgetConfigurationContext {
      */
     notify: <T>(event: string, eventArgs: EventArgs<T>) => Promise<NotifyResult>;
 }
+
 export class ConfigurationEvent {
     /**
      * Configuration has changed. When this event is notified, the preview is updated and Save button is enabled.
@@ -749,6 +756,7 @@ export class ConfigurationEvent {
         return { data: payload };
     }
 }
+
 /**
  * All widgets implement this interface
  */
@@ -793,6 +801,7 @@ export interface IWidget {
      */
     listen?: <T>(event: string, eventArgs: EventArgs<T>) => void;
 }
+
 /**
  * Configurable widgets implement this interface
  */
@@ -804,6 +813,7 @@ export interface IConfigurableWidget extends IWidget {
      */
     reload: (newWidgetSettings: WidgetSettings) => Promise<WidgetStatus>;
 }
+
 /**
  * Widget authors implement this interface for their configuration.
  */
@@ -815,10 +825,7 @@ export interface IWidgetConfiguration {
      *  @returns object wrapped in a promise that encapsulates the success of this operation.
      *           If load fails, returns error message via WidgetStatusHelper.Failure(errorMessage).
      */
-    load: (
-        widgetSettings: WidgetSettings,
-        widgetConfigurationContext: IWidgetConfigurationContext
-    ) => Promise<WidgetStatus>;
+    load: (widgetSettings: WidgetSettings, widgetConfigurationContext: IWidgetConfigurationContext) => Promise<WidgetStatus>;
     /**
      * Called by the host when the user clicks on the Save button.
      * Widget author is expected to run validations if needed.
@@ -838,6 +845,7 @@ export interface IWidgetConfiguration {
      */
     listen?: <T>(event: string, eventArgs: EventArgs<T>) => void;
 }
+
 /**
  * The result of a notification being made by a widget configuration.
  */
