@@ -647,6 +647,9 @@ export interface WidgetStatus {
     statusType?: WidgetStatusType;
 }
 
+/**
+ * From /Tfs/WebPlatform/Client/TFS/Dashboards/WidgetHelpers.ts 1/8/2024
+ */
 export class WidgetStatusHelper {
     /**
      * method to encapsulate a successful result for a widget loading operation (load, reload, openLightbox etc)
@@ -654,8 +657,8 @@ export class WidgetStatusHelper {
      * @param title title for the lightbox of a widget when available.
      * @returns promise encapsulating the status of the widget loading operations.
      */
-    static Success(state?: string): Promise<WidgetStatus> {
-        return Promise.resolve({ state, statusType: WidgetStatusType.Success });
+    public static Success(state?: string): Promise<WidgetStatus> {
+        return Promise.resolve(<WidgetStatus>{ state, statusType: WidgetStatusType.Success });
     }
 
     /**
@@ -666,9 +669,7 @@ export class WidgetStatusHelper {
      * allowed to set this to true. For any 3rd party widgets passing this value as true, it will be ignored.
      * @returns promise encapsulating the status of the widget loading operations.
      */
-    static Failure(message: string, isUserVisible?: boolean, isRichText?: boolean): Promise<WidgetStatus> {
-        isUserVisible = isUserVisible === undefined ? true : isUserVisible;
-        isRichText = isRichText === undefined ? false : isRichText;
+    public static Failure(message: string, isUserVisible: boolean = true, isRichText: boolean = false): Promise<WidgetStatus> {
         return Promise.reject({ message, isRichText, isUserVisible });
     }
 
@@ -676,18 +677,21 @@ export class WidgetStatusHelper {
      * method to encapsulate a result for a widget loading operation that results in the widget being in an unconfigured state.
      * @returns promise encapsulating the status of the widget loading operations.
      */
-    static Unconfigured(): Promise<WidgetStatus> {
-        return Promise.resolve({ statusType: WidgetStatusType.Unconfigured });
+    public static Unconfigured(): Promise<WidgetStatus> {
+        return Promise.resolve(<WidgetStatus>{ statusType: WidgetStatusType.Unconfigured });
     }
 }
 
+/**
+ * From /Tfs/WebPlatform/Client/TFS/Dashboards/WidgetHelpers.ts 1/8/2024
+ */
 export class WidgetConfigurationSave {
     /**
      * method to encapsulate a valid state that is returned by the widget configuration
      * @param customSettings settings from the widget configuration to be returned as part of this state.
      * @returns promise encapsulating the state being returned.
      */
-    static Valid(customSettings: CustomSettings): Promise<SaveStatus> {
+    public static Valid(customSettings: CustomSettings): Promise<SaveStatus> {
         return Promise.resolve({ customSettings, isValid: true });
     }
 
@@ -695,7 +699,7 @@ export class WidgetConfigurationSave {
      * method to encapsulate an invalid state that is returned by the widget configuration
      * @returns promise encapsulating the state being returned.
      */
-    static Invalid(): Promise<SaveStatus> {
+    public static Invalid(): Promise<SaveStatus> {
         return Promise.reject({ isValid: false });
     }
 }
@@ -724,6 +728,9 @@ export interface IWidgetConfigurationContext {
     notify: <T>(event: string, eventArgs: EventArgs<T>) => Promise<NotifyResult>;
 }
 
+/**
+ * From /Tfs/WebPlatform/Client/TFS/Dashboards/WidgetConfigHelpers.ts 1/8/2024
+ */
 export class ConfigurationEvent {
     /**
      * Configuration has changed. When this event is notified, the preview is updated and Save button is enabled.
@@ -732,7 +739,8 @@ export class ConfigurationEvent {
      *
      * {customSettings} is the serialized custom config settings pertaining to the widget.
      */
-    static ConfigurationChange: string = "ms.vss-dashboards-web.configurationChange";
+    public static ConfigurationChange: string = "ms.vss-dashboards-web.configurationChange";
+
     /**
      * Configuration tries to execute API calls and fails. When this event is notified, the config does not render a view and we pass an error message to the configuration host.
      *
@@ -740,7 +748,8 @@ export class ConfigurationEvent {
      *
      * {string} is the error message that is displayed at the top of the configuration.
      */
-    static ConfigurationError: string = "ms.vss-dashboards-web.configurationError";
+    public static ConfigurationError: string = "ms.vss-dashboards-web.configurationError";
+
     /**
      * Widget configuration general settings changed. When this event is notified, the widget name or widget size is updated.
      *
@@ -748,11 +757,12 @@ export class ConfigurationEvent {
      *
      * {generalSettings} is the serialized object containing WidgetName and WidgetSize
      */
-    static GeneralSettingsChanged: string = "ms.vss-dashboards-web.generalSettingsChanged";
+    public static GeneralSettingsChanged: string = "ms.vss-dashboards-web.generalSettingsChanged";
+
     /**
      * @param payload the event arguments we pass when we want to notify the configuration.
      */
-    static Args<T>(payload: T): EventArgs<T> {
+    public static Args<T>(payload: T): EventArgs<T> {
         return { data: payload };
     }
 }
