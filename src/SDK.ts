@@ -495,4 +495,3 @@ export function applyTheme(themeData: { [varName: string]: string }): void {
 
     dispatchEvent("themeApplied", { detail: themeData });
 }
-
