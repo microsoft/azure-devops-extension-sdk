@@ -25,9 +25,16 @@
   "homepage": "https://docs.microsoft.com/en-us/azure/devops/integrate",
   "main": "SDK.js",
   "exports": {
-    "types": "./SDK.d.ts",
-    "import": "./esm/SDK.min.js",
-    "require": "./SDK.min.js"
+    ".": {
+      "types": "./SDK.d.ts",
+      "import": "./esm/SDK.min.js",
+      "require": "./SDK.min.js"
+    },
+    "./XDM": {
+      "types": "./XDM.d.ts",
+      "import": "./esm/XDM.min.js",
+      "require": "./XDM.min.js"
+    }
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
