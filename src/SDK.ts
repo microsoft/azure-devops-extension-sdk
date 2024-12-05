@@ -220,10 +220,10 @@ interface IExtensionHandshakeResult {
     contributionId: string;
     context: {
         extension: IExtensionContext,
-        pageContext: IPageContext,
         user: IUserContext,
         host: IHostContext
     },
+    pageContext: IPageContext;
     initialConfig?: { [key: string]: any };
     themeData?: { [key: string]: string };
 }
@@ -281,17 +281,16 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
         const initOptions = { ...options, sdkVersion };
 
         parentChannel.invokeRemoteMethod<IExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
-            const context = handshakeData.context;
-            hostPageContext = context.pageContext;
+            hostPageContext = handshakeData.pageContext;
             webContext = hostPageContext ? hostPageContext.webContext : undefined;
             teamContext = webContext ? webContext.team : undefined;
 
             initialConfiguration = handshakeData.initialConfig || {};
             initialContributionId = handshakeData.contributionId;
 
-            extensionContext = context.extension;
-            userContext = context.user;
-            hostContext = context.host;
+            extensionContext = handshakeData.context.extension;
+            userContext = handshakeData.context.user;
+            hostContext = handshakeData.context.host;
 
             if (handshakeData.themeData) {
                 applyTheme(handshakeData.themeData);
