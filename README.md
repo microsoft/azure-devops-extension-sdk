@@ -1,5 +1,10 @@
 # Azure DevOps Web Extension SDK
 
+## Report issues
+Report issues or make suggestions via the Developer Community portal:
+
+https://developercommunity.visualstudio.com/AzureDevOps
+
 ## Release Notes
 New major version, v`4.*.*` provides multiple module support to the SDK.
 
