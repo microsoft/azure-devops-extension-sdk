@@ -1,9 +1,9 @@
 import { channelManager } from "./XDM";
 
 /**
- * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/3.0
+ * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/4.1
  */
-export const sdkVersion = 4.0;
+export const sdkVersion = 4.1;
 
 const global = window as any;
 if (global._AzureDevOpsSDKVersion) {
@@ -115,7 +115,7 @@ export interface IExtensionContext {
     /**
      * Full id of the extension <publisher>.<extension>
      */
-    id: string;
+    id?: string;
     /**
      * Id of the publisher
      */
@@ -128,6 +128,10 @@ export interface IExtensionContext {
      * Version of the extension
      */
     version: string;
+    /**
+     * URI for extension assets
+     */
+    baseUri?: string;
 }
 
 /**
@@ -223,8 +227,19 @@ interface IExtensionHandshakeResult {
         pageContext: IPageContext,
         user: IUserContext,
         host: IHostContext
-    },
+    };
     initialConfig?: { [key: string]: any };
+    themeData?: { [key: string]: string };
+}
+
+interface ILegacyExtensionHandshakeResult {
+    pageContext: IPageContext;
+    initialConfig?: { [key: string]: any };
+    extensionContext: IExtensionContext;
+    contribution: {
+        id: string;
+        properties: { [key: string]: any };
+    };
     themeData?: { [key: string]: string };
 }
 
@@ -280,18 +295,33 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
 
         const initOptions = { ...options, sdkVersion };
 
-        parentChannel.invokeRemoteMethod<IExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
-            const context = handshakeData.context;
-            hostPageContext = context.pageContext;
-            webContext = hostPageContext ? hostPageContext.webContext : undefined;
-            teamContext = webContext ? webContext.team : undefined;
+        parentChannel.invokeRemoteMethod<IExtensionHandshakeResult | ILegacyExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
 
-            initialConfiguration = handshakeData.initialConfig || {};
-            initialContributionId = handshakeData.contributionId;
+            if ('context' in handshakeData) {
+                const data = handshakeData as IExtensionHandshakeResult;
+                const context = data.context;
+                hostPageContext = context.pageContext;
+                webContext = hostPageContext ? hostPageContext.webContext : undefined;
+                teamContext = webContext ? webContext.team : undefined;
 
-            extensionContext = context.extension;
-            userContext = context.user;
-            hostContext = context.host;
+                initialConfiguration = data.initialConfig || {};
+                initialContributionId = data.contributionId;
+
+                extensionContext = context.extension;
+                userContext = context.user;
+                hostContext = context.host;
+            } else {
+                // handle legacy platform
+                const data = handshakeData as ILegacyExtensionHandshakeResult;
+                hostPageContext = data.pageContext;
+                webContext = hostPageContext ? hostPageContext.webContext : undefined;
+                teamContext = webContext ? webContext.team : undefined;
+
+                initialConfiguration = data.initialConfig || {};
+                initialContributionId = data.contribution.id;
+
+                extensionContext = data.extensionContext;
+            }
 
             if (handshakeData.themeData) {
                 applyTheme(handshakeData.themeData);
