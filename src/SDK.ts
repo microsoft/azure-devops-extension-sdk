@@ -115,7 +115,7 @@ export interface IExtensionContext {
     /**
      * Full id of the extension <publisher>.<extension>
      */
-    id?: string;
+    id: string;
     /**
      * Id of the publisher
      */
@@ -524,4 +524,5 @@ export function applyTheme(themeData: { [varName: string]: string }): void {
     themeElement.innerText = ":root { " + cssVariables.join("; ") + " } body { color: var(--text-primary-color) }";
 
     dispatchEvent("themeApplied", { detail: themeData });
+
 }
