@@ -115,7 +115,7 @@ export interface IExtensionContext {
     /**
      * Full id of the extension <publisher>.<extension>
      */
-    id: string;
+    id?: string;
     /**
      * Id of the publisher
      */
