@@ -530,4 +530,5 @@ export function applyTheme(themeData: { [varName: string]: string }): void {
     themeElement.innerText = ":root { " + cssVariables.join("; ") + " } body { color: var(--text-primary-color) }";
 
     dispatchEvent("themeApplied", { detail: themeData });
+
 }
