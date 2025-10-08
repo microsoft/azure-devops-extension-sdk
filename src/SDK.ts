@@ -1,9 +1,9 @@
 import { channelManager } from "./XDM";
 
 /**
- * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/4.1
+ * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/4.2
  */
-export const sdkVersion = 4.1;
+export const sdkVersion = 4.2;
 
 const global = window as any;
 if (global._AzureDevOpsSDKVersion) {
@@ -297,7 +297,25 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
 
         parentChannel.invokeRemoteMethod<IExtensionHandshakeResult | ILegacyExtensionHandshakeResult>("initialHandshake", hostControlId, [initOptions]).then((handshakeData) => {
 
-            if ('context' in handshakeData) {
+            if ('pageContext' in handshakeData) {
+                // handle legacy SDK format
+                const data = handshakeData as ILegacyExtensionHandshakeResult;
+                hostPageContext = data.pageContext;
+                webContext = hostPageContext ? hostPageContext.webContext : undefined;
+                teamContext = webContext ? webContext.team : undefined;
+
+                initialConfiguration = data.initialConfig || {};
+                initialContributionId = data.contribution.id;
+
+                extensionContext = data.extensionContext;
+                extensionContext.id = extensionContext.publisherId + '.' + extensionContext.extensionId;
+                if ('context' in handshakeData) {
+                    const context = handshakeData.context as { extension: IExtensionContext, user: IUserContext, host: IHostContext };
+                    userContext = context.user;
+                    hostContext = context.host;
+                }
+            } else {
+                // handle current SDK format
                 const data = handshakeData as IExtensionHandshakeResult;
                 const context = data.context;
                 hostPageContext = context.pageContext;
@@ -310,18 +328,6 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
                 extensionContext = context.extension;
                 userContext = context.user;
                 hostContext = context.host;
-            } else {
-                // handle legacy platform
-                const data = handshakeData as ILegacyExtensionHandshakeResult;
-                hostPageContext = data.pageContext;
-                webContext = hostPageContext ? hostPageContext.webContext : undefined;
-                teamContext = webContext ? webContext.team : undefined;
-
-                initialConfiguration = data.initialConfig || {};
-                initialContributionId = data.contribution.id;
-
-                extensionContext = data.extensionContext;
-                extensionContext.id = extensionContext.publisherId + '.' + extensionContext.extensionId;
             }
 
             if (handshakeData.themeData) {
