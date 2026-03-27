@@ -482,9 +482,11 @@ export function unregister(instanceId: string): void {
 
 /**
 * Fetch an access token which will allow calls to be made to other DevOps services
+*
+* @param forceRefresh - If true, requests a new token from the host rather than returning a potentially cached token.
 */
-export async function getAccessToken(): Promise<string> {
-    return parentChannel.invokeRemoteMethod<{ token: string }>("getAccessToken", hostControlId).then((tokenObj) => { return tokenObj.token; });
+export async function getAccessToken(forceRefresh?: boolean): Promise<string> {
+    return parentChannel.invokeRemoteMethod<{ token: string }>("getAccessToken", hostControlId, [forceRefresh]).then((tokenObj) => { return tokenObj.token; });
 }
 
 /**
