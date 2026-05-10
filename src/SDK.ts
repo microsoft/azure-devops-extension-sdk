@@ -339,11 +339,6 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
                 });
             }
 
-            // Initialize the Nested App Authentication bridge (non-blocking).
-            // This enables extensions to use MSAL's createNestablePublicClientApplication
-            // for cross-origin authentication via the host frame.
-            initializeNestedAppAuthBridge(parentChannel);
-
             resolveReady();
             resolve();
         });
@@ -498,6 +493,35 @@ export async function getAccessToken(): Promise<string> {
 */
 export async function getAppToken(): Promise<string> {
     return parentChannel.invokeRemoteMethod<{ token: string }>("getAppToken", hostControlId).then((tokenObj) => { return tokenObj.token; });
+}
+
+/**
+ * Enable Nested App Authentication (NAA) for this extension.
+ *
+ * Sets up `window.nestedAppAuthBridge` so that MSAL's
+ * `createNestablePublicClientApplication` can delegate token acquisition
+ * to the Azure DevOps host frame. This avoids cross-origin
+ * BroadcastChannel issues that block popup-based auth in iframes.
+ *
+ * Call this after `init()` and before creating an MSAL instance.
+ * Requires the extension to declare `entraClientId` in its manifest
+ * and the host to have NAA support enabled.
+ *
+ * @returns A promise that resolves when the bridge is ready, or rejects
+ *          if the host does not support NAA.
+ *
+ * @example
+ * ```
+ * await SDK.init();
+ * await SDK.enableNestedAppAuth();
+ * const pca = await createNestablePublicClientApplication({
+ *     auth: { clientId: "your-entra-client-id" }
+ * });
+ * ```
+ */
+export async function enableNestedAppAuth(): Promise<void> {
+    await ready();
+    return initializeNestedAppAuthBridge(parentChannel);
 }
 
 /**

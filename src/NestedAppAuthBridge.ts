@@ -34,13 +34,16 @@ const nestedAppAuthHostId = "DevOps.NestedAppAuth";
  * @param parentChannel - The XDM channel to the host frame
  */
 export async function initializeNestedAppAuthBridge(parentChannel: IXDMChannel): Promise<void> {
-    try {
-        const hostProxy = await parentChannel.getRemoteObjectProxy<INestedAppAuthHost>(nestedAppAuthHostId);
-        if (!hostProxy || typeof hostProxy.processRequest !== "function") {
-            return;
-        }
+    const hostProxy = await parentChannel.getRemoteObjectProxy<INestedAppAuthHost>(nestedAppAuthHostId);
+    if (!hostProxy || typeof hostProxy.processRequest !== "function") {
+        throw new Error(
+            "Nested App Authentication is not available. " +
+            "Ensure the extension declares 'entraClientId' in its manifest " +
+            "and the host has NAA support enabled."
+        );
+    }
 
-        const listeners: MessageListener[] = [];
+    const listeners: MessageListener[] = [];
 
         (window as any).nestedAppAuthBridge = {
             addEventListener(type: string, listener: MessageListener): void {
@@ -96,7 +99,4 @@ export async function initializeNestedAppAuthBridge(parentChannel: IXDMChannel):
                 );
             }
         };
-    } catch {
-        // Host does not support NAA — silently skip
-    }
 }
