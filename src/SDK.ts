@@ -1,4 +1,5 @@
 import { channelManager } from "./XDM";
+import { initializeNestedAppAuthBridge } from "./NestedAppAuthBridge";
 
 /**
  * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/4.2
@@ -337,6 +338,11 @@ export function init(options?: IExtensionInitOptions): Promise<void> {
                     applyTheme(ev.detail.data);
                 });
             }
+
+            // Initialize the Nested App Authentication bridge (non-blocking).
+            // This enables extensions to use MSAL's createNestablePublicClientApplication
+            // for cross-origin authentication via the host frame.
+            initializeNestedAppAuthBridge(parentChannel);
 
             resolveReady();
             resolve();
