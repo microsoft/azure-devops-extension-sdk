@@ -504,8 +504,7 @@ export async function getAppToken(): Promise<string> {
  * BroadcastChannel issues that block popup-based auth in iframes.
  *
  * Call this after `init()` and before creating an MSAL instance.
- * Requires the extension to declare `entraClientId` in its manifest
- * and the host to have NAA support enabled.
+ * Requires the host to have NAA support enabled.
  *
  * @returns A promise that resolves when the bridge is ready, or rejects
  *          if the host does not support NAA.

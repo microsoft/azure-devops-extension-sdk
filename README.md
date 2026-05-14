@@ -76,6 +76,42 @@ SDK.init();
 ## API
 A full API reference of can be found [here](https://docs.microsoft.com/en-us/javascript/api/azure-devops-extension-sdk/).
 
+## Nested App Authentication (NAA)
+
+Extensions that need to authenticate with Microsoft Entra ID can use the NAA bridge to acquire tokens via MSAL.js v5+. The bridge lets your extension use `createNestablePublicClientApplication` from `@azure/msal-browser` — the ADO host frame handles the actual authentication flow on your behalf, avoiding cross-origin iframe limitations.
+
+### Prerequisites
+
+1. Register a **SPA** app in the [Azure Portal](https://portal.azure.com)
+2. Add the redirect URI: `https://dev.azure.com/_public/_MsalPopup`
+3. Configure API permissions for the scopes you need
+
+### Usage
+
+```typescript
+import * as SDK from "azure-devops-extension-sdk";
+import { createNestablePublicClientApplication } from "@azure/msal-browser";
+
+await SDK.init();
+await SDK.enableNestedAppAuth();
+
+const pca = await createNestablePublicClientApplication({
+    auth: { clientId: "your-entra-client-id" },
+});
+
+try {
+    const result = await pca.acquireTokenSilent({
+        scopes: ["https://graph.microsoft.com/.default"],
+    });
+} catch {
+    const result = await pca.acquireTokenPopup({
+        scopes: ["https://graph.microsoft.com/.default"],
+    });
+}
+```
+
+> **Note:** Call `enableNestedAppAuth()` *before* `createNestablePublicClientApplication()`. Do not set `redirectUri` in your MSAL config — the bridge provides it automatically. `enableNestedAppAuth()` will throw if the host does not support NAA.
+
 
 ## Code of Conduct
 

@@ -34,33 +34,39 @@ const nestedAppAuthHostId = "DevOps.NestedAppAuth";
  * @param parentChannel - The XDM channel to the host frame
  */
 export async function initializeNestedAppAuthBridge(parentChannel: IXDMChannel): Promise<void> {
-    const hostProxy = await parentChannel.getRemoteObjectProxy<INestedAppAuthHost>(nestedAppAuthHostId);
-    if (!hostProxy || typeof hostProxy.processRequest !== "function") {
+    // Verify the host exposes the NAA endpoint by calling processRequest with
+    // a ping. We use invokeRemoteMethod directly instead of getRemoteObjectProxy
+    // because the host-side XDM serializer does not proxy functions.
+    try {
+        await parentChannel.invokeRemoteMethod<string>("processRequest", nestedAppAuthHostId, [
+            JSON.stringify({ messageType: "NestedAppAuthRequest", method: "Ping", requestId: "naa-init-ping" })
+        ]);
+    } catch (err: any) {
         throw new Error(
             "Nested App Authentication is not available. " +
-            "Ensure the extension declares 'entraClientId' in its manifest " +
-            "and the host has NAA support enabled."
+            "Ensure the host has NAA support enabled. " +
+            `Details: ${err?.message || err}`
         );
     }
 
     const listeners: MessageListener[] = [];
 
-        (window as any).nestedAppAuthBridge = {
-            addEventListener(type: string, listener: MessageListener): void {
-                if (type === "message") {
-                    listeners.push(listener);
+    (window as any).nestedAppAuthBridge = {
+        addEventListener(type: string, listener: MessageListener): void {
+            if (type === "message") {
+                listeners.push(listener);
+            }
+        },
+        removeEventListener(type: string, listener: MessageListener): void {
+            if (type === "message") {
+                const index = listeners.indexOf(listener);
+                if (index >= 0) {
+                    listeners.splice(index, 1);
                 }
-            },
-            removeEventListener(type: string, listener: MessageListener): void {
-                if (type === "message") {
-                    const index = listeners.indexOf(listener);
-                    if (index >= 0) {
-                        listeners.splice(index, 1);
-                    }
-                }
-            },
-            postMessage(requestJson: string): void {
-                hostProxy.processRequest(requestJson).then(
+            }
+        },
+        postMessage(requestJson: string): void {
+            parentChannel.invokeRemoteMethod<string>("processRequest", nestedAppAuthHostId, [requestJson]).then(
                     (responseJson: string) => {
                         for (const listener of listeners) {
                             try {
