@@ -4,7 +4,7 @@ import { initializeNestedAppAuthBridge } from "./NestedAppAuthBridge";
 /**
  * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/4.2
  */
-export const sdkVersion = 4.2;
+export const sdkVersion = 5.0;
 
 const global = window as any;
 if (global._AzureDevOpsSDKVersion) {
