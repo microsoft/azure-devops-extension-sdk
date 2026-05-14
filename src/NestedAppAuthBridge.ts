@@ -107,9 +107,68 @@ export async function initializeNestedAppAuthBridge(parentChannel: IXDMChannel):
 }
 
 /**
- * Tears down the NAA bridge by removing `window.nestedAppAuthBridge`.
- * Call this when the extension no longer needs NAA, or during cleanup in tests.
+ * Tears down the NAA bridge by replacing `window.nestedAppAuthBridge` with a
+ * poisoned stub whose methods throw clear errors. This ensures that:
+ * - Existing MSAL PCA instances get an explicit error on their next token call
+ *   (MSAL reads `window.nestedAppAuthBridge.postMessage` on every request).
+ * - New `createNestablePublicClientApplication` calls fail during bridge init
+ *   instead of silently falling back to the standard (broken) popup flow.
  */
 export function teardownNestedAppAuthBridge(): void {
-    delete (window as any).nestedAppAuthBridge;
+    const listeners: Array<(response: string | { data: string }) => void> = [];
+
+    (window as any).nestedAppAuthBridge = {
+        postMessage(requestJson: string): void {
+            // Respond asynchronously through the registered listener so MSAL's
+            // BridgeProxy promise resolves/rejects cleanly.
+            try {
+                const request = JSON.parse(requestJson);
+                let response: object;
+
+                if (request.method === "GetInitContext") {
+                    // Let init succeed so MSAL creates a NestedAppAuth PCA
+                    // instead of falling back to the standard (broken) popup flow.
+                    response = {
+                        messageType: "NestedAppAuthResponse",
+                        requestId: request.requestId,
+                        success: true,
+                        initContext: {
+                            sdkName: "azure-devops-extension-sdk",
+                            sdkVersion: "disabled"
+                        }
+                    };
+                } else {
+                    // All actual token requests get a clear error.
+                    response = {
+                        messageType: "NestedAppAuthResponse",
+                        requestId: request.requestId,
+                        success: false,
+                        error: {
+                            status: "Disabled",
+                            code: "BridgeDisabled",
+                            description: "Nested App Authentication bridge has been disabled. Call enableNestedAppAuth() to re-enable."
+                        }
+                    };
+                }
+
+                const responseJson = JSON.stringify(response);
+                setTimeout(() => {
+                    for (const listener of listeners) {
+                        try { listener(responseJson); } catch { /* ignore */ }
+                    }
+                }, 0);
+            } catch {
+                // If we can't parse the request, nothing we can do
+            }
+        },
+        addEventListener(_type: string, listener: (response: string | { data: string }) => void): void {
+            listeners.push(listener);
+        },
+        removeEventListener(_type: string, listener: (response: string | { data: string }) => void): void {
+            const index = listeners.indexOf(listener);
+            if (index >= 0) {
+                listeners.splice(index, 1);
+            }
+        }
+    };
 }
