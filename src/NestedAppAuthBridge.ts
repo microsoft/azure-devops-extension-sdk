@@ -50,7 +50,10 @@ export async function initializeNestedAppAuthBridge(parentChannel: IXDMChannel):
 
     const listeners: MessageListener[] = [];
 
-    (window as any).nestedAppAuthBridge = {
+    const bridge: any = {
+        // Store listeners array as a property so teardownNestedAppAuthBridge
+        // can dispatch poisoned responses through the same listeners.
+        _naaListeners: listeners,
         addEventListener(type: string, listener: MessageListener): void {
             if (type === "message") {
                 listeners.push(listener);
@@ -104,71 +107,75 @@ export async function initializeNestedAppAuthBridge(parentChannel: IXDMChannel):
                 );
             }
         };
+
+    (window as any).nestedAppAuthBridge = bridge;
 }
 
 /**
- * Tears down the NAA bridge by replacing `window.nestedAppAuthBridge` with a
- * poisoned stub whose methods throw clear errors. This ensures that:
- * - Existing MSAL PCA instances get an explicit error on their next token call
- *   (MSAL reads `window.nestedAppAuthBridge.postMessage` on every request).
- * - New `createNestablePublicClientApplication` calls fail during bridge init
- *   instead of silently falling back to the standard (broken) popup flow.
+ * Tears down the NAA bridge by replacing the `postMessage` function on the
+ * existing `window.nestedAppAuthBridge` with a poisoned version. We mutate
+ * in-place (rather than replacing the whole object) because existing MSAL PCA
+ * instances have already registered their listener via `addEventListener` on
+ * this object — replacing the object would orphan those listeners and cause
+ * MSAL to hang waiting for a response that never arrives.
  */
 export function teardownNestedAppAuthBridge(): void {
-    const listeners: Array<(response: string | { data: string }) => void> = [];
+    const bridge = (window as any).nestedAppAuthBridge;
+    if (!bridge) {
+        return;
+    }
 
-    (window as any).nestedAppAuthBridge = {
-        postMessage(requestJson: string): void {
-            // Respond asynchronously through the registered listener so MSAL's
-            // BridgeProxy promise resolves/rejects cleanly.
-            try {
-                const request = JSON.parse(requestJson);
-                let response: object;
+    // Replace postMessage with a poisoned version that responds with errors.
+    // We keep addEventListener/removeEventListener intact so MSAL's existing
+    // listeners remain registered on the same _naaListeners array.
+    bridge.postMessage = function (requestJson: string): void {
+        try {
+            const request = JSON.parse(requestJson);
+            let response: object;
 
-                if (request.method === "GetInitContext") {
-                    // Let init succeed so MSAL creates a NestedAppAuth PCA
-                    // instead of falling back to the standard (broken) popup flow.
-                    response = {
-                        messageType: "NestedAppAuthResponse",
-                        requestId: request.requestId,
-                        success: true,
-                        initContext: {
-                            sdkName: "azure-devops-extension-sdk",
-                            sdkVersion: "disabled"
-                        }
-                    };
-                } else {
-                    // All actual token requests get a clear error.
-                    response = {
-                        messageType: "NestedAppAuthResponse",
-                        requestId: request.requestId,
-                        success: false,
-                        error: {
-                            status: "Disabled",
-                            code: "BridgeDisabled",
-                            description: "Nested App Authentication bridge has been disabled. Call enableNestedAppAuth() to re-enable."
-                        }
-                    };
-                }
-
-                const responseJson = JSON.stringify(response);
-                setTimeout(() => {
-                    for (const listener of listeners) {
-                        try { listener(responseJson); } catch { /* ignore */ }
+            if (request.method === "GetInitContext") {
+                // Let init succeed so MSAL creates a NestedAppAuth PCA
+                // instead of falling back to the standard (broken) popup flow.
+                response = {
+                    messageType: "NestedAppAuthResponse",
+                    requestId: request.requestId,
+                    success: true,
+                    initContext: {
+                        sdkName: "azure-devops-extension-sdk",
+                        sdkVersion: "disabled"
                     }
-                }, 0);
-            } catch {
-                // If we can't parse the request, nothing we can do
+                };
+            } else {
+                // All actual token requests get a clear error.
+                response = {
+                    messageType: "NestedAppAuthResponse",
+                    requestId: request.requestId,
+                    success: false,
+                    error: {
+                        status: "Disabled",
+                        code: "BridgeDisabled",
+                        description: "Nested App Authentication bridge has been disabled. Call enableNestedAppAuth() to re-enable."
+                    }
+                };
             }
-        },
-        addEventListener(_type: string, listener: (response: string | { data: string }) => void): void {
-            listeners.push(listener);
-        },
-        removeEventListener(_type: string, listener: (response: string | { data: string }) => void): void {
-            const index = listeners.indexOf(listener);
-            if (index >= 0) {
-                listeners.splice(index, 1);
-            }
+
+            const responseJson = JSON.stringify(response);
+            // Use setTimeout so the response is delivered asynchronously,
+            // matching the real bridge's behavior.
+            setTimeout(() => {
+                // Dispatch to all listeners currently registered on this bridge
+                // object. We trigger a synthetic MessageEvent-like call by
+                // invoking the listener with the response string directly.
+                // MSAL's BridgeProxy listener accepts both string and {data: string}.
+                const event = { data: responseJson };
+                if (typeof bridge._naaListeners !== "undefined") {
+                    for (const listener of bridge._naaListeners) {
+                        try { listener(event); } catch { /* ignore */ }
+                    }
+                }
+            }, 0);
+        } catch {
+            // If we can't parse the request, nothing we can do
         }
     };
 }
