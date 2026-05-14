@@ -90,7 +90,7 @@ Extensions that need to authenticate with Microsoft Entra ID can use the NAA bri
 
 ```typescript
 import * as SDK from "azure-devops-extension-sdk";
-import { createNestablePublicClientApplication } from "@azure/msal-browser";
+import { createNestablePublicClientApplication, InteractionRequiredAuthError } from "@azure/msal-browser";
 
 await SDK.init();
 await SDK.enableNestedAppAuth();
@@ -99,14 +99,20 @@ const pca = await createNestablePublicClientApplication({
     auth: { clientId: "your-entra-client-id" },
 });
 
+// The NAA bridge provides SSO hints, so acquireTokenSilent will succeed
+// when the user has already authenticated in the host frame.
 try {
     const result = await pca.acquireTokenSilent({
         scopes: ["https://graph.microsoft.com/.default"],
     });
-} catch {
-    const result = await pca.acquireTokenPopup({
-        scopes: ["https://graph.microsoft.com/.default"],
-    });
+} catch (err) {
+    if (err instanceof InteractionRequiredAuthError) {
+        const result = await pca.acquireTokenPopup({
+            scopes: ["https://graph.microsoft.com/.default"],
+        });
+    } else {
+        throw err;
+    }
 }
 ```
 
@@ -114,11 +120,13 @@ try {
 
 ### Cleanup
 
-Call `disableNestedAppAuth()` when your extension no longer needs NAA (e.g., during teardown). This removes the `window.nestedAppAuthBridge` object. Any in-flight MSAL operations may fail after this call.
+Call `disableNestedAppAuth()` when your extension no longer needs NAA (e.g., during teardown or in tests). After this call, the bridge remains as a stub that returns a clear `BridgeDisabled` error for any subsequent MSAL token requests — no popup will open and no `interaction_in_progress` lock will occur.
 
 ```typescript
 SDK.disableNestedAppAuth();
 ```
+
+To re-enable, call `enableNestedAppAuth()` again.
 
 
 ## Code of Conduct
