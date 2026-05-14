@@ -1,5 +1,5 @@
 import { channelManager } from "./XDM";
-import { initializeNestedAppAuthBridge } from "./NestedAppAuthBridge";
+import { initializeNestedAppAuthBridge, teardownNestedAppAuthBridge } from "./NestedAppAuthBridge";
 
 /**
  * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/4.2
@@ -521,6 +521,15 @@ export async function getAppToken(): Promise<string> {
 export async function enableNestedAppAuth(): Promise<void> {
     await ready();
     return initializeNestedAppAuthBridge(parentChannel);
+}
+
+/**
+ * Tears down the Nested App Authentication bridge, removing `window.nestedAppAuthBridge`.
+ * Call this when the extension no longer needs NAA support, or during cleanup.
+ * Any in-flight MSAL operations may fail after this call.
+ */
+export function disableNestedAppAuth(): void {
+    teardownNestedAppAuthBridge();
 }
 
 /**

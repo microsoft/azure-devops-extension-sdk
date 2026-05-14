@@ -78,7 +78,7 @@ A full API reference of can be found [here](https://docs.microsoft.com/en-us/jav
 
 ## Nested App Authentication (NAA)
 
-Extensions that need to authenticate with Microsoft Entra ID can use the NAA bridge to acquire tokens via MSAL.js v5+. The bridge lets your extension use `createNestablePublicClientApplication` from `@azure/msal-browser` — the ADO host frame handles the actual authentication flow on your behalf, avoiding cross-origin iframe limitations.
+Extensions that need to authenticate with Microsoft Entra ID can use the NAA bridge to acquire tokens via MSAL.js v5+. The bridge lets your extension use `createNestablePublicClientApplication` from `@azure/msal-browser` — the Azure DevOps host frame handles the actual authentication flow on your behalf, avoiding cross-origin iframe limitations.
 
 ### Prerequisites
 
@@ -111,6 +111,14 @@ try {
 ```
 
 > **Note:** Call `enableNestedAppAuth()` *before* `createNestablePublicClientApplication()`. Do not set `redirectUri` in your MSAL config — the bridge provides it automatically. `enableNestedAppAuth()` will throw if the host does not support NAA.
+
+### Cleanup
+
+Call `disableNestedAppAuth()` when your extension no longer needs NAA (e.g., during teardown). This removes the `window.nestedAppAuthBridge` object. Any in-flight MSAL operations may fail after this call.
+
+```typescript
+SDK.disableNestedAppAuth();
+```
 
 
 ## Code of Conduct

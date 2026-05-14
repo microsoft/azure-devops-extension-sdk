@@ -43,8 +43,7 @@ export async function initializeNestedAppAuthBridge(parentChannel: IXDMChannel):
         ]);
     } catch (err: any) {
         throw new Error(
-            "Nested App Authentication is not available. " +
-            "Ensure the host has NAA support enabled. " +
+            "Nested App Authentication is not available in this Azure DevOps environment yet. " +
             `Details: ${err?.message || err}`
         );
     }
@@ -105,4 +104,12 @@ export async function initializeNestedAppAuthBridge(parentChannel: IXDMChannel):
                 );
             }
         };
+}
+
+/**
+ * Tears down the NAA bridge by removing `window.nestedAppAuthBridge`.
+ * Call this when the extension no longer needs NAA, or during cleanup in tests.
+ */
+export function teardownNestedAppAuthBridge(): void {
+    delete (window as any).nestedAppAuthBridge;
 }
