@@ -118,6 +118,23 @@ try {
 
 > **Note:** Call `enableNestedAppAuth()` *before* `createNestablePublicClientApplication()`. Do not set `redirectUri` in your MSAL config — the bridge provides it automatically. `enableNestedAppAuth()` will throw if the host does not support NAA.
 
+### Consent
+
+On first use, `acquireTokenSilent` will fail with `consent_required` because the user hasn't consented to your app yet. The `InteractionRequiredAuthError` catch block handles this automatically by opening `acquireTokenPopup`, which shows the Entra consent prompt.
+
+After consent, subsequent `acquireTokenSilent` calls succeed without interaction.
+
+To proactively trigger consent (e.g., on a "Connect" button), use `prompt: "consent"`:
+
+```typescript
+await pca.acquireTokenPopup({
+    scopes: ["https://graph.microsoft.com/.default"],
+    prompt: "consent"
+});
+```
+
+If your app requires admin-level permissions, a tenant admin must grant consent in the Azure Portal (App Registration → API Permissions → "Grant admin consent").
+
 ### Cleanup
 
 Call `disableNestedAppAuth()` when your extension no longer needs NAA (e.g., during teardown or in tests). After this call, the bridge remains as a stub that returns a clear `BridgeDisabled` error for any subsequent MSAL token requests — no popup will open and no `interaction_in_progress` lock will occur.
