@@ -524,9 +524,10 @@ export async function enableNestedAppAuth(): Promise<void> {
 }
 
 /**
- * Tears down the Nested App Authentication bridge, removing `window.nestedAppAuthBridge`.
- * Call this when the extension no longer needs NAA support, or during cleanup.
- * Any in-flight MSAL operations may fail after this call.
+ * Disables the Nested App Authentication bridge. After this call, any MSAL
+ * token requests will receive a `BridgeDisabled` error. The bridge object
+ * remains on `window.nestedAppAuthBridge` so existing MSAL listeners are
+ * not orphaned. Call `enableNestedAppAuth()` to re-enable.
  */
 export function disableNestedAppAuth(): void {
     teardownNestedAppAuthBridge();
