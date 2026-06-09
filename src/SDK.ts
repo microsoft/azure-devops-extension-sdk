@@ -1,9 +1,10 @@
 import { channelManager } from "./XDM";
+import { initializeNestedAppAuthBridge, teardownNestedAppAuthBridge } from "./NestedAppAuthBridge";
 
 /**
  * Web SDK version number. Can be specified in an extension's set of demands like: vss-sdk-version/4.2
  */
-export const sdkVersion = 4.2;
+export const sdkVersion = 5.0;
 
 const global = window as any;
 if (global._AzureDevOpsSDKVersion) {
@@ -492,6 +493,44 @@ export async function getAccessToken(): Promise<string> {
 */
 export async function getAppToken(): Promise<string> {
     return parentChannel.invokeRemoteMethod<{ token: string }>("getAppToken", hostControlId).then((tokenObj) => { return tokenObj.token; });
+}
+
+/**
+ * Enable Nested App Authentication (NAA) for this extension.
+ *
+ * Sets up `window.nestedAppAuthBridge` so that MSAL's
+ * `createNestablePublicClientApplication` can delegate token acquisition
+ * to the Azure DevOps host frame. This avoids cross-origin
+ * BroadcastChannel issues that block popup-based auth in iframes.
+ *
+ * Call this after `init()` and before creating an MSAL instance.
+ * Requires the host to have NAA support enabled.
+ *
+ * @returns A promise that resolves when the bridge is ready, or rejects
+ *          if the host does not support NAA.
+ *
+ * @example
+ * ```
+ * await SDK.init();
+ * await SDK.enableNestedAppAuth();
+ * const pca = await createNestablePublicClientApplication({
+ *     auth: { clientId: "your-entra-client-id" }
+ * });
+ * ```
+ */
+export async function enableNestedAppAuth(): Promise<void> {
+    await ready();
+    return initializeNestedAppAuthBridge(parentChannel);
+}
+
+/**
+ * Disables the Nested App Authentication bridge. After this call, any MSAL
+ * token requests will receive a `BridgeDisabled` error. The bridge object
+ * remains on `window.nestedAppAuthBridge` so existing MSAL listeners are
+ * not orphaned. Call `enableNestedAppAuth()` to re-enable.
+ */
+export function disableNestedAppAuth(): void {
+    teardownNestedAppAuthBridge();
 }
 
 /**
