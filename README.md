@@ -83,8 +83,20 @@ Extensions that need to authenticate with Microsoft Entra ID can use the NAA bri
 ### Prerequisites
 
 1. Register a **SPA** app in the [Azure Portal](https://portal.azure.com)
-2. Add the redirect URI: `https://dev.azure.com/_public/_MsalPopup`
+2. Add a redirect URI for your extension:
+
+   `https://dev.azure.com/_public/_MsalPopup?extensionId={publisherId}.{extensionId}`
+
+   Use your extension's full ID (publisher ID and extension ID from your manifest), for example
+   `https://dev.azure.com/_public/_MsalPopup?extensionId=fabrikam.fabrikam-dashboard`.
+   If your users access Azure DevOps through `https://{organization}.visualstudio.com`, also add the same path and query on that origin.
 3. Configure API permissions for the scopes you need
+
+> **Migrating an existing app registration:** If your app currently uses `https://dev.azure.com/_public/_MsalPopup` without the `extensionId` query, add the extension-specific redirect URI above. Keep the old entry until you have verified sign-in works with the new one.
+
+#### Using one app registration for multiple extensions
+
+The host only completes token requests for extensions whose redirect URI is registered on the app. To share one Entra app across several extensions (for example production, preview, and development versions), add a redirect URI for each extension ID. Only add extensions you own or trust: any extension listed in the app's redirect URIs can acquire tokens for that app on behalf of your users.
 
 ### Usage
 
